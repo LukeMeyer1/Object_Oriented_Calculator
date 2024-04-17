@@ -24,6 +24,6 @@ project (assignment4) {
     Modulo_Command.cpp
     Stack_Command_Factory.cpp
     Number_Node.cpp
-    Binary_Operator_Node.cpp
+    Add_Node.cpp
   }
 }
