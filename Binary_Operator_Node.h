@@ -27,7 +27,7 @@ public:
 	*
 	* @param[in]	left_branch		left branch of the node
 	*/
-	Binary_Operator_Node(Tree_Node*& left_branch);
+	Binary_Operator_Node(Tree_Node* left_branch);
 
 	/**
 	* Initializing constructor.
