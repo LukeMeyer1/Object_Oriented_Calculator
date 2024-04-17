@@ -41,11 +41,11 @@ public:
 	~Binary_Operator_Node(void);
 
 	/// Returns the product of the operation on the left and right branches
-	virtual int eval(Tree_Node& left_branch, Tree_Node& right_branch);
+	int eval();
 
 protected:
-	//Tree_Node * left_branch_;
-//	Tree_Node * right_branch_;
+	Tree_Node * left_branch_;
+	Tree_Node * right_branch_;
 };
 
 #include "Binary_Operator_Node.cpp"

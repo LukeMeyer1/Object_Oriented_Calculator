@@ -6,14 +6,15 @@
 // on this assignment.
 
 #include "Binary_Operator_Node.h"
+#include "Number_Node.h"
 
 
 // 
 // Binary_Operator_Node 
 //
 Binary_Operator_Node::Binary_Operator_Node()
-//	: left_branch_(nullptr),
-//	right_branch_(nullptr)
+	: left_branch_(new Number_Node(1)),
+	right_branch_(new Number_Node(2))
 { }
 
 // 
@@ -44,7 +45,7 @@ Binary_Operator_Node::~Binary_Operator_Node(void)
 //
 // eval
 //
-int Binary_Operator_Node::eval(Tree_Node& left_branch, Tree_Node& right_branch)
+int Binary_Operator_Node::eval()
 {
-	return (left_branch.eval() + right_branch.eval());
+	return (left_branch->eval() + right_branch->eval());
 }
