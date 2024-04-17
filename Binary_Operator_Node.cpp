@@ -13,8 +13,8 @@
 // Binary_Operator_Node 
 //
 Binary_Operator_Node::Binary_Operator_Node()
-	: left_branch_(new Number_Node(1)),
-	right_branch_(new Number_Node(2))
+	: left_branch_(nullptr),
+	right_branch_(nullptr)
 { }
 
 // 
@@ -22,16 +22,16 @@ Binary_Operator_Node::Binary_Operator_Node()
 //
 Binary_Operator_Node::Binary_Operator_Node(Tree_Node* left_branch)
 	: left_branch_(left_branch),
-	right_branch_(new Number_Node(2))
+	right_branch_(nullptr)
 { }
 
 // 
 // Binary_Operator_Node 
 //
-//Binary_Operator_Node::Binary_Operator_Node(Tree_Node*& left_branch, Tree_Node*& right_branch)
-//	: left_branch_(left_branch),
-//	right_branch_(right_branch)
-//{ }
+Binary_Operator_Node::Binary_Operator_Node(Tree_Node* left_branch, Tree_Node* right_branch)
+	: left_branch_(left_branch),
+	right_branch_(right_branch)
+{ }
 
 //
 // ~Binary_Operator_Node
@@ -47,6 +47,5 @@ Binary_Operator_Node::~Binary_Operator_Node(void)
 //
 int Binary_Operator_Node::eval()
 {
-	std::cout << "left_branch_ = " << left_branch_ << std::endl;
 	return (left_branch_->eval() + right_branch_->eval());
 }
