@@ -21,7 +21,7 @@ Binary_Operator_Node::Binary_Operator_Node()
 // Binary_Operator_Node 
 //
 Binary_Operator_Node::Binary_Operator_Node(Tree_Node* left_branch)
-	: left_branch_(&left_branch),
+	: left_branch_(left_branch),
 	right_branch_(new Number_Node(2))
 { 
 	std::cout << "left_branch_ = " << left_branch_ << std::endl;
