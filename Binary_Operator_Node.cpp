@@ -44,7 +44,7 @@ Binary_Operator_Node::~Binary_Operator_Node(void)
 //
 // eval
 //
-int Binary_Operator_Node::eval(void)
+int Binary_Operator_Node::eval(Tree_Node*& left_branch, Tree_Node*& right_branch)
 {
-	return this->left_branch_->eval() + this->right_branch_->eval();
+	return (left_branch->eval() + right_branch->eval());
 }
