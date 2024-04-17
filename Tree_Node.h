@@ -25,4 +25,6 @@ public:
 	virtual int eval(void) = 0;
 };
 
+#include "Tree_Node.cpp"
+
 #endif   // !defined _TREE_NODE_H_
