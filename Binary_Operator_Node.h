@@ -44,8 +44,8 @@ public:
 	virtual int eval(Tree_Node& left_branch, Tree_Node& right_branch);
 
 protected:
-	Tree_Node * left_branch_;
-	Tree_Node * right_branch_;
+	//Tree_Node * left_branch_;
+//	Tree_Node * right_branch_;
 };
 
 #include "Binary_Operator_Node.cpp"
