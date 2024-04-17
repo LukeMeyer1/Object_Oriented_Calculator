@@ -26,7 +26,7 @@ public:
 	*
 	* @param[in]	left_branch		left branch of the node
 	*/
-	Add_Node(Tree_Node*& left_branch);
+	Add_Node(Tree_Node* left_branch);
 
 	/**
 	* Initializing constructor.
@@ -34,7 +34,7 @@ public:
 	* @param[in]	left_branch		left branch of the node
 	* @param[in]	right_branch	right branch of the node
 	*/
-	Add_Node(Tree_Node*& left_branch, Tree_Node*& right_branch);
+	Add_Node(Tree_Node* left_branch, Tree_Node* right_branch);
 
 	// Destructor
 	~Add_Node(void);

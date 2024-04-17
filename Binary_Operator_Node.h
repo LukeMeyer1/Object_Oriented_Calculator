@@ -41,7 +41,7 @@ public:
 	~Binary_Operator_Node(void);
 
 	/// Returns the product of the operation on the left and right branches
-	int eval();
+	virtual int eval() = 0;
 
 protected:
 	Tree_Node * left_branch_;

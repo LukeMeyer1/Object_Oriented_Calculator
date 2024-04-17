@@ -42,10 +42,3 @@ Binary_Operator_Node::~Binary_Operator_Node(void)
 	delete this->left_branch_;
 }
 
-//
-// eval
-//
-int Binary_Operator_Node::eval()
-{
-	return (left_branch_->eval() + right_branch_->eval());
-}

@@ -18,14 +18,14 @@ Add_Node::Add_Node()
 // 
 // Add_Node 
 //
-Add_Node::Add_Node(Tree_Node*& left_branch)
+Add_Node::Add_Node(Tree_Node* left_branch)
 	: Binary_Operator_Node(left_branch)
 { }
 
 // 
 // Add_Node 
 //
-Add_Node::Add_Node(Tree_Node*& left_branch, Tree_Node*& right_branch)
+Add_Node::Add_Node(Tree_Node* left_branch, Tree_Node* right_branch)
 	: Binary_Operator_Node(left_branch, right_branch)
 { }
 
