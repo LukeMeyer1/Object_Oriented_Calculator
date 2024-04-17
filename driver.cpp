@@ -188,7 +188,7 @@ int main(int argc, char* argv[])
 
 		std::cout << std::endl;
 	}*/
-	Tree_Node* n1 = new Number_Node(1);
+	Number_Node * n1(1);
 	std::cout << "n1 = " << n1 << std::endl;
 	Binary_Operator_Node * n3 = new Binary_Operator_Node();
 	std::cout << "1 + 2 = " << n3->eval() << std::endl;
