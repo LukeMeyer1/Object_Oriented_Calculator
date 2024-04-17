@@ -25,5 +25,9 @@ project (assignment4) {
     Stack_Command_Factory.cpp
     Number_Node.cpp
     Add_Node.cpp
+    Subtract_Node.cpp
+    Multiply_Node.cpp
+    Divide_Node.cpp
+    Modulo_Node.cpp
   }
 }
