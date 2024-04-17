@@ -20,10 +20,10 @@ Binary_Operator_Node::Binary_Operator_Node()
 // 
 // Binary_Operator_Node 
 //
-//Binary_Operator_Node::Binary_Operator_Node(Tree_Node*& left_branch)
-//	: left_branch_(left_branch),
-//	right_branch_(nullptr)
-//{ }
+Binary_Operator_Node::Binary_Operator_Node(Tree_Node*& left_branch)
+	: left_branch_(left_branch),
+	right_branch_(new Number_Node(2))
+{ }
 
 // 
 // Binary_Operator_Node 
@@ -38,8 +38,8 @@ Binary_Operator_Node::Binary_Operator_Node()
 //
 Binary_Operator_Node::~Binary_Operator_Node(void)
 { 
-	//delete this->right_branch_;
-	//delete this->left_branch_;
+	delete this->right_branch_;
+	delete this->left_branch_;
 }
 
 //
