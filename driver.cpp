@@ -10,7 +10,7 @@
 #include "Stack.h"
 #include "Stack_Command_Factory.h"
 #include "Number_Node.h"
-#include "Add_Node.h"
+#include "Binary_Operator_Node.h"
 
 /**
 * Pushes a command onto stack and pushes all in front of lesser priority onto postfix equation
