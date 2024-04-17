@@ -188,9 +188,9 @@ int main(int argc, char* argv[])
 
 		std::cout << std::endl;
 	}*/
-	Number_Node  n1 = new Number_Node(1);
-	Number_Node * n2 = new Number_Node(2);
-	Binary_Operator_Node * n3 = new Binary_Operator_Node();
+	Tree_Node * n1 = new Number_Node(1);
+	Tree_Node * n2 = new Number_Node(2);
+	Tree_Node * n3 = new Binary_Operator_Node();
 	n3->eval(n1, n2);
 	//std::cout << "1 + 2 = " << n3->eval() << std::endl;
 	delete n3;
