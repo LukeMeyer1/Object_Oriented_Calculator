@@ -189,7 +189,7 @@ int main(int argc, char* argv[])
 		std::cout << std::endl;
 	}*/
 	
-	Binary_Operator_Node n3 = Binary_Operator_Node(new Number_Node(1));
+	Binary_Operator_Node * n3 = new Binary_Operator_Node(new Number_Node(1));
 	std::cout << "1 + 2 = " << n3->eval() << std::endl;
 	delete n3;
 }
