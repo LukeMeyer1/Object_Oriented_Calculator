@@ -47,5 +47,5 @@ Binary_Operator_Node::~Binary_Operator_Node(void)
 //
 int Binary_Operator_Node::eval()
 {
-	return (left_branch->eval() + right_branch->eval());
+	return (left_branch_->eval() + right_branch_->eval());
 }

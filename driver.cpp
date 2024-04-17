@@ -191,7 +191,7 @@ int main(int argc, char* argv[])
 	Number_Node n1 = Number_Node(1);
 	Number_Node n2 = Number_Node(2);
 	Binary_Operator_Node n3 = Binary_Operator_Node();
-	n3.eval(n1, n2);
+	n3.eval();
 	//std::cout << "1 + 2 = " << n3->eval() << std::endl;
 	//delete n3;
 	//delete n2;
