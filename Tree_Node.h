@@ -8,6 +8,8 @@
 #ifndef	_TREE_NODE_H_
 #define _TREE_NODE_H_
 
+#include "Tree_Node_Visitor.h"
+
 /**
 * @class Tree Node
 *
