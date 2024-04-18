@@ -8,7 +8,7 @@
 #ifndef	_TREE_NODE_VISITOR_H_
 #define _TREE_NODE_VISITOR_H_
 
-#include "Tree_Node.h"
+#include "Number_Node.h"
 
 /**
 * @class Binary Operator Node
@@ -23,7 +23,7 @@ public:
 	~Tree_Node_Visitor(void);
 
 	// Methods for visiting concrete nodes
-	virtual void Visit_Number_Node(const Tree_Node & node) = 0;
+	virtual void Visit_Number_Node(const Number_Node & node) = 0;
 };
 
 #endif   // !defined _TREE_NODE_VISITOR_H_

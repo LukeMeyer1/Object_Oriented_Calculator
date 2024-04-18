@@ -9,7 +9,6 @@
 #define _EVAL_TREE_VISITOR_H_
 
 #include "Tree_Node_Visitor.h"
-#include "Number_Node.h"
 
 /**
 * @class Binary Operator Node
