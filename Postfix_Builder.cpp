@@ -28,7 +28,7 @@ Postfix_Builder::~Postfix_Builder(void)
 //
 void Postfix_Builder::build_number(int num)
 {
-	postfix_.append(factory.create_number_command(num));
+	postfix_.append(factory_.create_number_command(num));
 }
 
 //
@@ -37,7 +37,7 @@ void Postfix_Builder::build_number(int num)
 void Postfix_Builder::build_add_operator(void)
 {
 	
-	operator_onto_stack(factory.create_add_command());
+	operator_onto_stack(factory_.create_add_command());
 }
 
 //
@@ -45,7 +45,7 @@ void Postfix_Builder::build_add_operator(void)
 //
 void Postfix_Builder::build_subtract_operator(void)
 {
-	operator_onto_stack(factory.create_subtract_command());
+	operator_onto_stack(factory_.create_subtract_command());
 }
 
 //
@@ -53,7 +53,7 @@ void Postfix_Builder::build_subtract_operator(void)
 //
 void Postfix_Builder::build_multiply_operator(void) 
 {
-	operator_onto_stack(factory.create_multiply_command());
+	operator_onto_stack(factory_.create_multiply_command());
 }
 
 //
@@ -61,7 +61,7 @@ void Postfix_Builder::build_multiply_operator(void)
 //
 void Postfix_Builder::build_divide_operator(void)
 {
-	operator_onto_stack(factory.create_divide_command());
+	operator_onto_stack(factory_.create_divide_command());
 }
 
 //
@@ -69,7 +69,7 @@ void Postfix_Builder::build_divide_operator(void)
 //
 void Postfix_Builder::build_modulo_operator(void)
 {
-	operator_onto_stack(factory.create_modulo_command());
+	operator_onto_stack(factory_.create_modulo_command());
 }
 
 //
