@@ -12,7 +12,7 @@
 // Postfix_Expr 
 //
 Postfix_Expr::Postfix_Expr(Stack<int> & res)
-	: result_(res)
+	: result_(&res)
 { }
 
 //
