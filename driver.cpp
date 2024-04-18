@@ -40,23 +40,23 @@ bool infix_to_postfix(std::istringstream & input,
 
 		// Plus operator
 		if (token == "+") {
-			b.build_add_command();
+			b.build_add_operator();
 		}
 		// Minus operator
 		else if (token == "-") {
-			b.build_subtract_command();
+			b.build_subtract_operator();
 		}
 		// Multiply operator
 		else if (token == "*") {
-			b.build_multiply_command();
+			b.build_multiply_operator();
 		}
 		// Divide operator
 		else if (token == "/") {
-			b.build_divide_command();
+			b.build_divide_operator();
 		}
 		// Modulo operator
 		else if (token == "%") {
-			b.build_modulo_command();
+			b.build_modulo_operator();
 		}
 
 		// Open parenthesis operator
