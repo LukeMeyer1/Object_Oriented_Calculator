@@ -46,9 +46,9 @@ private:
 	// Array that stores the expression
 	Postfix_Expr postfix_;
 	// Factory that builds command
-	Stack_Command_Factory & factory_;
+	Stack_Command_Factory factory_;
 	// Temporary operator stack
-	Stack <Operator_Command*> & temp_;
+	Stack <Operator_Command*> temp_;
 };
 
 #include "Postfix_Builder.cpp"
