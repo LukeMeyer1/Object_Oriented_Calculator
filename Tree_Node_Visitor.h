@@ -23,7 +23,7 @@ public:
 	~Tree_Node_Visitor(void);
 
 	// Methods for visiting concrete nodes
-	void Visit_Number_Node(const Tree_Node & node) = 0;
+	virtual void Visit_Number_Node(const Tree_Node & node) = 0;
 };
 
 #endif   // !defined _TREE_NODE_VISITOR_H_
