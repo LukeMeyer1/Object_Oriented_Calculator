@@ -19,6 +19,9 @@ class Tree_Node_Visitor
 public:
 	// Destructor
 	~Tree_Node_Visitor(void);
+
+	// Methods for visiting concrete nodes
+	void Visit_Number_Node(const Number_Node& node) = 0;
 };
 
 #endif   // !defined _TREE_NODE_VISITOR_H_
