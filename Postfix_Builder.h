@@ -41,7 +41,7 @@ public:
 
 private:
 	// helper function to add operator onto temp stack
-	void operator_onto_stack(cmd);
+	void operator_onto_stack(Operator_Command * cmd);
 
 	// Array that stores the expression
 	Postfix_Expr postfix_;

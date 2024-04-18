@@ -27,7 +27,7 @@ Postfix_Expr::~Postfix_Expr(void)
 void Postfix_Expr::reset(void)
 {
 	this->expr_.resize(0);
-	this->result_.clear();
+	this->result_->clear();
 }
 
 //

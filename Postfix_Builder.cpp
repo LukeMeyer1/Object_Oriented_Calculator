@@ -13,8 +13,8 @@
 //
 Postfix_Builder::Postfix_Builder(Stack<int>& postfix)
 	: postfix_(postfix),
-	factory_(Stack_Command_Factory(result)),
-	temp_(Stack <Operator_Command*>())
+	factory_(Stack_Command_Factory(result_)),
+	temp_(&Stack <Operator_Command*>())
 { }
 
 //
