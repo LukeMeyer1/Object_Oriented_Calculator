@@ -206,7 +206,7 @@ int main(int argc, char* argv[])
 //	std::cout << "4 % 3 = " << n7->eval() << std::endl;
 
 	delete n3;
-//	delete n4;
+	delete n4;
 //	delete n5;
 //	delete n6;
 //	delete n7;

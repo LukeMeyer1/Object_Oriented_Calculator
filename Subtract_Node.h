@@ -6,7 +6,7 @@
 // on this assignment.
 
 #ifndef	_SUBTRACT_NODE_H_
-#define _SUTRACT_NODE_H_
+#define _SUBTRACT_NODE_H_
 
 #include "Binary_Operator_Node.h"
 
@@ -45,4 +45,4 @@ public:
 
 #include "Subtract_Node.cpp"
 
-#endif   // !defined _SUTRACT_NODE_H_
+#endif   // !defined _SUBTRACT_NODE_H_
