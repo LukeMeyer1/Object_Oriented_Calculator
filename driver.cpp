@@ -150,7 +150,7 @@ int main(int argc, char* argv[])
 			return 0;
 
 		// reset postfix 
-		postfix = Postfix_Expr(result)
+		postfix = Postfix_Expr(result);
 
 		// translate infix equation to postfix and solve if infix was valid
 		std::istringstream input(infix);
