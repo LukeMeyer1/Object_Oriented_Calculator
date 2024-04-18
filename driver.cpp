@@ -194,7 +194,7 @@ int main(int argc, char* argv[])
 		std::cout << std::endl;
 	}*/
 	Eval_Tree_Visitor eval;
-	Tree_Node * n1 = new Number_Node(4);
+	Number_Node * n1 = new Number_Node(4);
 	n1->accept(eval);
 	Tree_Node * n2 = new Number_Node(2);
 	Add_Node * n3 = new Add_Node(n1, n2);
