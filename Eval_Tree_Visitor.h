@@ -8,6 +8,8 @@
 #ifndef	_EVAL_TREE_VISITOR_H_
 #define _EVAL_TREE_VISITOR_H_
 
+#include "Number_Node.h"
+
 /**
 * @class Binary Operator Node
 *
