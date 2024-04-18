@@ -8,6 +8,12 @@
 #include "Eval_Tree_Node.h"
 
 //
+// Eval_Tree_Visitor
+//
+Eval_Tree_Visitor::Eval_Tree_Visitor(void)
+{ }
+
+//
 // Destructor
 //
 Eval_Tree_Visitor::~Eval_Tree_Visitor(void)

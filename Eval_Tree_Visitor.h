@@ -18,6 +18,9 @@
 class Eval_Tree_Visitor : public Tree_Node_Visitor
 {
 public:
+	// Default Constructor
+	Eval_Tree_Visitor(void);
+	
 	// Destructor
 	~Eval_Tree_Visitor(void);
 
