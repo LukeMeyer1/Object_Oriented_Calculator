@@ -63,7 +63,7 @@ bool infix_to_postfix(std::istringstream & input,
 		else if (token == "(") {
 			// recursive call, will put all new postfix onto the same postfix equation until reaching a close parenthesis
 			// or the end of the statement
-			bool did_run = infix_to_postfix(input, factory, postfix, true);
+			bool did_run = infix_to_postfix(input, b, true);
 			if (!did_run)
 				return false;
 		}
@@ -82,7 +82,7 @@ bool infix_to_postfix(std::istringstream & input,
 		// Number operator
 		else {
 			// add number command directly to end of postfix array
-			b.build_number_command(std::stoi(token));
+			b.build_number(std::stoi(token));
         }
 	}
 	// reached end of input
@@ -110,7 +110,7 @@ int main(int argc, char* argv[])
 	std::string infix;
 	Stack<int> result = Stack<int>();
 	Postfix_Builder build(result);
-	Postfix_Expr postfix;
+	Postfix_Expr postfix(result);
 	while (true) {
 		// get user input into 'infix'
 		infix = "";
@@ -123,7 +123,7 @@ int main(int argc, char* argv[])
 
 		// translate infix equation to postfix and solve if infix was valid
 		std::istringstream input(infix);
-		if (infix_to_postfix(input, postfix)) {
+		if (infix_to_postfix(input, build)) {
 			// output result
 			postfix = build.postfix();
 			std::cout << postfix.eval() << std::endl;
