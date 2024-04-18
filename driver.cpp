@@ -15,6 +15,7 @@
 #include "Multiply_Node.h"
 #include "Divide_Node.h"
 #include "Modulo_Node.h"
+#include "Eval_Tree_Visitor.h"
 
 /**
 * Pushes a command onto stack and pushes all in front of lesser priority onto postfix equation
@@ -192,18 +193,15 @@ int main(int argc, char* argv[])
 
 		std::cout << std::endl;
 	}*/
+	Eval_Tree_Visitor eval();
 	Tree_Node * n1 = new Number_Node(4);
+	n1->accept(eval);
 	Tree_Node * n2 = new Number_Node(2);
 	Add_Node * n3 = new Add_Node(n1, n2);
 	Tree_Node * n4 = new Subtract_Node(new Number_Node(4), new Number_Node(2));
 	Tree_Node * n5 = new Multiply_Node(new Number_Node(4), new Number_Node(2));
 	Tree_Node * n6 = new Divide_Node(new Number_Node(4), new Number_Node(2));
 	Tree_Node * n7 = new Modulo_Node(new Number_Node(4), new Number_Node(3));
-	std::cout << "4 + 2 = " << n3->eval() << std::endl;
-	std::cout << "4 - 2 = " << n4->eval() << std::endl;
-	std::cout << "4 * 2 = " << n5->eval() << std::endl;
-	std::cout << "4 / 2 = " << n6->eval() << std::endl;
-	std::cout << "4 % 3 = " << n7->eval() << std::endl;
 
 	delete n3;
 	delete n4;
