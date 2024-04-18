@@ -9,13 +9,13 @@
 #include "Modulo_Command.h"
 #include "Stack.h"
 #include "Stack_Command_Factory.h"
+#include "Eval_Tree_Visitor.h"
 #include "Number_Node.h"
 #include "Add_Node.h"
 #include "Subtract_Node.h"
 #include "Multiply_Node.h"
 #include "Divide_Node.h"
 #include "Modulo_Node.h"
-#include "Eval_Tree_Visitor.h"
 
 /**
 * Pushes a command onto stack and pushes all in front of lesser priority onto postfix equation
