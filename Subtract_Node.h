@@ -39,8 +39,8 @@ public:
 	// Destructor
 	~Subtract_Node(void);
 
-	/// Returns the number node's value
-	int eval(void);
+	/// Traverses the tree
+	virtual void accept(Tree_Node_Visitor& v);
 };
 
 #include "Subtract_Node.cpp"

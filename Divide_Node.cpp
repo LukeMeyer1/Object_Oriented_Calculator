@@ -36,9 +36,9 @@ Divide_Node::~Divide_Node(void)
 { }
 
 //
-// eval
+// accept
 //
-int Divide_Node::eval(void)
+void Divide_Node::accept(Tree_Node_Visitor& v)
 {
-	return this->left_branch_->eval() / this->right_branch_->eval();
+	v.Visit_Divide_Node(*this);
 }

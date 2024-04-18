@@ -36,9 +36,9 @@ Subtract_Node::~Subtract_Node(void)
 { }
 
 //
-// eval
+// accept
 //
-int Subtract_Node::eval(void)
+void Subtract_Node::accept(Tree_Node_Visitor& v)
 {
-	return this->left_branch_->eval() - this->right_branch_->eval();
+	v.Visit_Subtract_Node(*this);
 }

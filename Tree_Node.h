@@ -18,11 +18,12 @@ class Tree_Node
 public:
 	//Default Constructor
 	Tree_Node(void);
+
 	//Destructor
 	~Tree_Node(void);
 
-	/// Operation that is executed on the stack
-	virtual int eval(void) = 0;
+	/// Traverses the tree
+	virtual void accept(Tree_Node_Visitor & v) = 0;
 };
 
 #include "Tree_Node.cpp"

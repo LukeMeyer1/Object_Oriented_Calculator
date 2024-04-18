@@ -22,9 +22,9 @@ Number_Node::~Number_Node(void)
 { }
 
 //
-// eval
+// accept
 //
-int Number_Node::eval(void)
+void Number_Node::accept(Tree_Node_Visitor& v)
 {
-	return this->num_;
+	v.Visit_Number_Node(*this);
 }
