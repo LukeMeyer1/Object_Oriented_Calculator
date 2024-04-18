@@ -9,7 +9,7 @@
 #define _NUMBER_NODE_H_
 
 #include "Tree_Node.h"
-#include "Eval_Tree_Visitor.h"
+#include "Tree_Node_Visitor.h"
 
 /**
 * @class Number Node
@@ -27,7 +27,7 @@ public:
 	~Number_Node (void);
 
 	// traverse the tree
-	void accept(Eval_Tree_Visitor& v);
+	void accept(Tree_Node_Visitor & v);
 
 	/// Returns the number node's value
 	virtual int eval(void);
