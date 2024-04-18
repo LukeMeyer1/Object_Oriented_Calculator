@@ -40,7 +40,7 @@ public:
 	~Add_Node(void);
 
 	/// Traverses the tree
-	virtual void accept(Eval_Tree_Visitor& v);
+	virtual void accept(Tree_Node_Visitor& v);
 };
 
 #include "Add_Node.cpp"
