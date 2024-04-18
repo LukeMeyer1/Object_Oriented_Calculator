@@ -25,6 +25,9 @@ public:
 	// Destructor
 	~Number_Node (void);
 
+	// traverse the tree
+	void accept(Eval_Tree_Visitor& v);
+
 	/// Returns the number node's value
 	virtual int eval(void);
 

@@ -22,6 +22,14 @@ Number_Node::~Number_Node(void)
 { }
 
 //
+// accept
+//
+void Number_Node::accept(Eval_Tree_Visitor& v)
+{
+	return;
+}
+
+//
 // eval
 //
 int Number_Node::eval(void)
