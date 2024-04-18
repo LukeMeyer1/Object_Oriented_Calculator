@@ -23,7 +23,7 @@ public:
 	~Postfix_Expr(void);
 
 	// Increases size by one and adds command to end of expr
-	void append(Command& com);
+	void append(Command* com);
 
 	/// Returns the expressions value
 	virtual int eval(void);
