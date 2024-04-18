@@ -32,7 +32,7 @@ void Number_Node::accept(Tree_Node_Visitor& v)
 //
 // get num
 //
-int Number_Node::get_num()
+int Number_Node::get_num(void)
 {
 	return this->num_;
 }

@@ -28,6 +28,9 @@ public:
 	/// Returns the number node's value
 	virtual int eval(void);
 
+	// return num_ value
+	int get_num(void);
+
 private:
 	// Value of the number node
 	int num_;
