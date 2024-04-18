@@ -195,6 +195,7 @@ int main(int argc, char* argv[])
 	}*/
 	Eval_Tree_Visitor eval;
 	Tree_Node * n1 = new Number_Node(4);
+	n1->accept(eval);
 	Tree_Node * n2 = new Number_Node(2);
 	Add_Node * n3 = new Add_Node(n1, n2);
 	Tree_Node * n4 = new Subtract_Node(new Number_Node(4), new Number_Node(2));
