@@ -24,7 +24,7 @@ Eval_Tree_Visitor::~Eval_Tree_Visitor(void)
 //
 void Eval_Tree_Visitor::Visit_Number_Node(const Number_Node& node)
 {
-	std::cout << node.num_ << std::endl;
+	std::cout << node.get_num() << std::endl;
 }
 
 //
