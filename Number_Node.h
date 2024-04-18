@@ -28,6 +28,9 @@ public:
 	/// Traverses the tree
 	virtual void accept(Tree_Node_Visitor& v);
 
+	// Returns num_ value
+	int get_num(void);
+
 private:
 	// Value of the number node
 	int num_;
