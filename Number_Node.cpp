@@ -26,7 +26,7 @@ Number_Node::~Number_Node(void)
 //
 void Number_Node::accept(Eval_Tree_Visitor& v)
 {
-	return;
+	v.Visit_Number_Node(*this);
 }
 
 //
