@@ -26,7 +26,7 @@ Postfix_Expr::~Postfix_Expr(void)
 //
 // append
 //
-void Postfix_Expr::append(Command& com)
+void Postfix_Expr::append(Command* com)
 {
 	expr_.resize(expr_.size() + 1);
 	expr_.set(expr_.size() - 1, &com);
