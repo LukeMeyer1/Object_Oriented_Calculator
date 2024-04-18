@@ -36,9 +36,9 @@ Add_Node::~Add_Node(void)
 { }
 
 //
-// accept
+// eval
 //
-void Add_Node::accept(Tree_Node_Visitor& v)
+int Add_Node::eval(void)
 {
-	v.Visit_Add_Node(*this);
+	return this->left_branch_->eval() + this->right_branch_->eval();
 }

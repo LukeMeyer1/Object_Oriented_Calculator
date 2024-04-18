@@ -36,9 +36,9 @@ Multiply_Node::~Multiply_Node(void)
 { }
 
 //
-// accept
+// eval
 //
-void Multiply_Node::accept(Tree_Node_Visitor& v)
+int Multiply_Node::eval(void)
 {
-	v.Visit_Multiply_Node(*this);
+	return this->left_branch_->eval() * this->right_branch_->eval();
 }

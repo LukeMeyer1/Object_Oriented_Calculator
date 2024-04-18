@@ -36,9 +36,9 @@ Modulo_Node::~Modulo_Node(void)
 { }
 
 //
-// accept
+// eval
 //
-void Modulo_Node::accept(Tree_Node_Visitor& v)
+int Modulo_Node::eval(void)
 {
-	v.Visit_Modulo_Node(*this);
+	return this->left_branch_->eval() % this->right_branch_->eval();
 }
