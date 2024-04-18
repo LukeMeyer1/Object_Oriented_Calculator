@@ -23,7 +23,7 @@ public:
 	~Tree_Node(void);
 
 	/// Traverses the tree
-	virtual void eval(void) = 0;
+	virtual int eval(void) = 0;
 };
 
 #include "Tree_Node.cpp"
