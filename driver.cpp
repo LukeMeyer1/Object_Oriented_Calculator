@@ -152,9 +152,11 @@ int main(int argc, char* argv[])
 		// reset postfix 
 		postfix = Postfix_Expr(result);
 
+		std::cout << "postfix made" << std::endl;
 		// translate infix equation to postfix and solve if infix was valid
 		std::istringstream input(infix);
 		if (infix_to_postfix(input, factory, postfix)) {
+			std::cout << "postfix from infix" << std::endl;
 			// output result
 			std::cout << postfix.eval() << std::endl;
 		}
