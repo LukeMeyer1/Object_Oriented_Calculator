@@ -9,7 +9,6 @@
 #define _NUMBER_NODE_H_
 
 #include "Tree_Node.h"
-#include "Tree_Node_Visitor.h"
 
 /**
 * @class Number Node
