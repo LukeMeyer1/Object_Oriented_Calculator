@@ -29,7 +29,7 @@ Postfix_Expr::~Postfix_Expr(void)
 void Postfix_Expr::append(Command* com)
 {
 	expr_.resize(expr_.size() + 1);
-	expr_.set(expr_.size() - 1, &com);
+	expr_.set(expr_.size() - 1, com);
 }
 
 //
