@@ -29,7 +29,7 @@ Postfix_Expr::~Postfix_Expr(void)
 void Postfix_Expr::append(Command& com)
 {
 	expr_.resize(expr_.size() + 1);
-	expr_.set(expr_.size() - 1, &com)
+	expr_.set(expr_.size() - 1, &com);
 }
 
 //
@@ -37,9 +37,9 @@ void Postfix_Expr::append(Command& com)
 //
 int Postfix_Expr::eval(void)
 {
-	for (int i = 0; i < arr.size(); ++i)
+	for (int i = 0; i < expr_.size(); ++i)
 	{
-		arr.get(i)->execute();
+		expr_.get(i)->execute();
 	}
 	return result_->pop();
 }
