@@ -22,6 +22,15 @@ Postfix_Expr::~Postfix_Expr(void)
 { }
 
 //
+// reset
+//
+void Postfix_Expr::reset(void)
+{
+	this->expr_.resize(0);
+	this->result_.clear();
+}
+
+//
 // append
 //
 void Postfix_Expr::append(Command* com)

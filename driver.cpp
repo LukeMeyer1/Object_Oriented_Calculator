@@ -16,25 +16,8 @@
 #include "Divide_Node.h"
 #include "Modulo_Node.h"
 #include "Postfix_Expr.h"
+#include "Postfix_Builder.h"
 
-/**
-* Pushes a command onto stack and pushes all in front of lesser priority onto postfix equation
-* 
-* @param	cmd					command that is being added to stack
-* @param	postfix				array to store commands in postfix order
-* @param	stk					stack that the commands are being temporarily stored on
-*/
-void operator_onto_stack(Operator_Command* & cmd,
-						Postfix_Expr& postfix,
-						Stack<Operator_Command*>& stk)
-{
-	// push command at top of stk onto postfix until reach command of lesser or equal priority as cmd
-	while ((stk.size() > 0) and (cmd->priority() <= stk.top()->priority())) {
-		postfix.append(stk.pop());
-	}
-	// push add command onto the stack
-	stk.push(cmd);
-}
 
 /**
 * Creates a postfix statement from an infix statement
@@ -46,41 +29,34 @@ void operator_onto_stack(Operator_Command* & cmd,
 * @return	if valid infix equation was given 	
 */
 bool infix_to_postfix(std::istringstream & input,
-					  Command_Factory & factory,
-					  Postfix_Expr & postfix,
+					  Postfix_Builder & b,
 					  bool opened_parenthesis = false)
 {
 	std::string token;
-	Operator_Command* cmd = 0;
-	Stack <Operator_Command*> temp;
+	b.start_expression();
 	while (!input.eof()) {
 
 		input >> token;
 
 		// Plus operator
 		if (token == "+") {
-			cmd = factory.create_add_command();
-			operator_onto_stack(cmd, postfix, temp);
+			b.build_add_command();
 		}
 		// Minus operator
 		else if (token == "-") {
-			cmd = factory.create_subtract_command();
-			operator_onto_stack(cmd, postfix, temp);
+			b.build_subtract_command();
 		}
 		// Multiply operator
 		else if (token == "*") {
-			cmd = factory.create_multiply_command();
-			operator_onto_stack(cmd, postfix, temp);
+			b.build_multiply_command();
 		}
 		// Divide operator
 		else if (token == "/") {
-			cmd = factory.create_divide_command();
-			operator_onto_stack(cmd, postfix, temp);
+			b.build_divide_command();
 		}
 		// Modulo operator
 		else if (token == "%") {
-			cmd = factory.create_modulo_command();
-			operator_onto_stack(cmd, postfix, temp);
+			b.build_modulo_command();
 		}
 
 		// Open parenthesis operator
@@ -97,9 +73,7 @@ bool infix_to_postfix(std::istringstream & input,
 			// closed, else return false because there is a closed parenthesis without an open.
 			if (opened_parenthesis) {
 				// empty temp stack onto end of postfix array
-				while (!(temp.is_empty())) {
-					postfix.append(temp.pop());
-				}
+				b.end_expression();
 
 				return true;
 			}
@@ -108,7 +82,7 @@ bool infix_to_postfix(std::istringstream & input,
 		// Number operator
 		else {
 			// add number command directly to end of postfix array
-			postfix.append(factory.create_number_command(std::stoi(token)));
+			b.build_number_command(std::stoi(token));
         }
 	}
 	// reached end of input
@@ -116,9 +90,7 @@ bool infix_to_postfix(std::istringstream & input,
 	// check if opened parenthesis 
 	if (!opened_parenthesis){
 		// empty temp stack onto end of postfix array
-		while (!(temp.is_empty())) {
-			postfix.append(temp.pop());
-		}
+		b.end_expression();
 
 		return true;
 	}
@@ -137,8 +109,8 @@ int main(int argc, char* argv[])
 
 	std::string infix;
 	Stack<int> result = Stack<int>();
-	Stack_Command_Factory factory(result);
-	Postfix_Expr postfix(result);
+	Postfix_Builder build(result);
+	Postfix_Expr postfix;
 	while (true) {
 		// get user input into 'infix'
 		infix = "";
@@ -149,13 +121,11 @@ int main(int argc, char* argv[])
 		if (infix == "QUIT")
 			return 0;
 
-		// reset postfix 
-		postfix = Postfix_Expr(result);
-
 		// translate infix equation to postfix and solve if infix was valid
 		std::istringstream input(infix);
-		if (infix_to_postfix(input, factory, postfix)) {
+		if (infix_to_postfix(input, postfix)) {
 			// output result
+			postfix = build.postfix();
 			std::cout << postfix.eval() << std::endl;
 		}
 		// if invalid infix expression, output error statement

@@ -30,5 +30,6 @@ project (assignment4) {
     Divide_Node.cpp
     Modulo_Node.cpp
     Postfix_Expr.cpp
+    Postfix_Builder.cpp
   }
 }

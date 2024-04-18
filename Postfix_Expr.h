@@ -25,6 +25,9 @@ public:
 	// Increases size by one and adds command to end of expr
 	void append(Command* com);
 
+	// empties the array
+	void reset(void);
+
 	/// Returns the expressions value
 	virtual int eval(void);
 
