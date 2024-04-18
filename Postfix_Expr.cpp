@@ -19,9 +19,7 @@ Postfix_Expr::Postfix_Expr(Stack<int> & res)
 // ~Postfix_Expr
 //
 Postfix_Expr::~Postfix_Expr(void)
-{ 
-	delete this->result_;
-}
+{ }
 
 //
 // append
