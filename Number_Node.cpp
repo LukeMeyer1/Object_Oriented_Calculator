@@ -22,11 +22,11 @@ Number_Node::~Number_Node(void)
 { }
 
 //
-// accept
+// eval
 //
-void Number_Node::accept(Tree_Node_Visitor& v)
+int Number_Node::eval(void)
 {
-	return;
+	return this->num_;
 }
 
 //
