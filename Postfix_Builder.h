@@ -17,7 +17,7 @@ class Postfix_Builder
 {
 public:
 	// Default constructor
-	Postfix_Builder(Stack<int>& res);
+	Postfix_Builder(Stack<int>& result);
 
 	// Destructor
 	~Postfix_Builder(void);
