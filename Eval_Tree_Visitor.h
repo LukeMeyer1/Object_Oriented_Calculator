@@ -26,7 +26,7 @@ public:
 	~Eval_Tree_Visitor(void);
 
 	// Methods for visiting concrete nodes
-	void Visit_Number_Node(const Number_Node::Number_Node & node);
+	void Visit_Number_Node(const Tree_Node & node);
 };
 
 #include "Eval_Tree_Visitor.cpp"
