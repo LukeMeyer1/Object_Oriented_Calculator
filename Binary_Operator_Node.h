@@ -40,8 +40,8 @@ public:
 	// Destructor
 	~Binary_Operator_Node(void);
 
-	/// Traverses the tree
-	virtual void accept(Tree_Node_Visitor& v) = 0;
+	/// Returns the product of the operation on the left and right branches
+	virtual int eval();
 
 protected:
 	Tree_Node * left_branch_;

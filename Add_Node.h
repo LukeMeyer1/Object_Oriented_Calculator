@@ -39,8 +39,8 @@ public:
 	// Destructor
 	~Add_Node(void);
 
-	/// Traverses the tree
-	virtual void accept(Tree_Node_Visitor& v);
+	/// Returns the number node's value
+	int eval(void);
 };
 
 #include "Add_Node.cpp"
