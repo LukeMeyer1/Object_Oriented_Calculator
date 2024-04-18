@@ -15,6 +15,7 @@
 #include "Multiply_Node.h"
 #include "Divide_Node.h"
 #include "Modulo_Node.h"
+#include "Postfix_Expression.h"
 
 /**
 * Pushes a command onto stack and pushes all in front of lesser priority onto postfix equation
@@ -24,13 +25,12 @@
 * @param	stk					stack that the commands are being temporarily stored on
 */
 void operator_onto_stack(Operator_Command* & cmd,
-						Array<Command*>& postfix,
+						Postfix_Expr& postfix,
 						Stack<Operator_Command*>& stk)
 {
 	// push command at top of stk onto postfix until reach command of lesser or equal priority as cmd
 	while ((stk.size() > 0) and (cmd->priority() <= stk.top()->priority())) {
-		postfix.resize(postfix.size() + 1);
-		postfix.set(postfix.size() - 1, stk.pop());
+		postfix.append(stk.pop());
 	}
 	// push add command onto the stack
 	stk.push(cmd);
@@ -47,17 +47,13 @@ void operator_onto_stack(Operator_Command* & cmd,
 */
 bool infix_to_postfix(std::istringstream & input,
 					  Command_Factory & factory,
-					  Array<Command*> & postfix,
+					  Postfix_Expr & postfix,
 					  bool opened_parenthesis = false)
 {
 	std::string token;
 	Operator_Command* cmd = 0;
 	Stack <Operator_Command*> temp;
 	while (!input.eof()) {
-		// COMMENT: Improve the design of your commands to reduce the design
-		// complexity of this method. Right now, there are too many if-else
-		// statements, and a lot of duplicate code.
-		// RESPONSE: created a function to take care of duplicated code
 
 		input >> token;
 
@@ -87,10 +83,6 @@ bool infix_to_postfix(std::istringstream & input,
 			operator_onto_stack(cmd, postfix, temp);
 		}
 
-		// COMMENT: Create a design that does not require having parenthesis as
-		// as command object since parenthesis are not executed.
-		// RESPONSE: I made parenthesis a recursive call
-
 		// Open parenthesis operator
 		else if (token == "(") {
 			// recursive call, will put all new postfix onto the same postfix equation until reaching a close parenthesis
@@ -105,10 +97,8 @@ bool infix_to_postfix(std::istringstream & input,
 			// closed, else return false because there is a closed parenthesis without an open.
 			if (opened_parenthesis) {
 				// empty temp stack onto end of postfix array
-				postfix.resize(postfix.size() + temp.size());
 				while (!(temp.is_empty())) {
-					int temp_size = temp.size();
-					postfix.set(postfix.size() - temp_size, temp.pop());
+					postfix.append(temp.pop());
 				}
 
 				return true;
@@ -118,8 +108,7 @@ bool infix_to_postfix(std::istringstream & input,
 		// Number operator
 		else {
 			// add number command directly to end of postfix array
-			postfix.resize(postfix.size() + 1);
-			postfix.set(postfix.size() - 1, factory.create_number_command(std::stoi(token)));
+			postfix.append(factory.create_number_command(std::stoi(token)));
         }
 	}
 	// reached end of input
@@ -127,10 +116,8 @@ bool infix_to_postfix(std::istringstream & input,
 	// check if opened parenthesis 
 	if (!opened_parenthesis){
 		// empty temp stack onto end of postfix array
-		postfix.resize(postfix.size() + temp.size());
 		while (!(temp.is_empty())) {
-			int temp_size = temp.size();
-			postfix.set(postfix.size() - temp_size, temp.pop());
+			postfix.append(temp.pop());
 		}
 
 		return true;
@@ -139,33 +126,19 @@ bool infix_to_postfix(std::istringstream & input,
 	return false;
 }
 
-/**
-* Evaluates a postfix equation leaving the solution as the only element 
-* left in the command's stack member 's_'
-* 
-* @param	arr			array of command objects in postfix order
-*/
-void evaluate_postfix(Array<Command*>& arr) {
-	for (int i = 0; i < arr.size(); ++i)
-		{
-			arr.get(i)->execute();
-			delete arr.get(i);
-		}
-}
-
 ///
 ///	Main
 /// 
 int main(int argc, char* argv[])
 {
-	/*
+	
 	// COMMENT The program is to loop until QUIT is entered.
 	// RESPONSE: added loop with and check for QUIT to end.
 
 	std::string infix;
 	Stack<int> result = Stack<int>();
 	Stack_Command_Factory factory(result);
-	Array<Command*> postfix = Array<Command*>();
+	Postfix_Expr postfix(result);
 	while (true) {
 		// get user input into 'infix'
 		infix = "";
@@ -177,21 +150,26 @@ int main(int argc, char* argv[])
 			return 0;
 
 		// reset postfix 
-		postfix.resize(0);
+		postfix = Postfix_Expr(result)
 
 		// translate infix equation to postfix and solve if infix was valid
 		std::istringstream input(infix);
 		if (infix_to_postfix(input, factory, postfix)) {
-			evaluate_postfix(postfix);
 			// output result
-			std::cout << result.pop() << std::endl;
+			std::cout << postfix.eval() << std::endl;
 		}
 		// if invalid infix expression, output error statement
 		else
 			std::cout << "Invalid equation" << std::endl;
 
 		std::cout << std::endl;
-	}*/
+	}
+
+
+
+
+
+
 	Number_Node * n1 = new Number_Node(4);
 	Tree_Node * n2 = new Number_Node(2);
 	Add_Node * n3 = new Add_Node(n1, n2);
