@@ -8,8 +8,6 @@
 #ifndef	_TREE_NODE_H_
 #define _TREE_NODE_H_
 
-#include "Tree_Node_Visitor.h"
-
 /**
 * @class Tree Node
 *
@@ -25,7 +23,7 @@ public:
 	~Tree_Node(void);
 
 	/// Traverses the tree
-	virtual void accept(Tree_Node_Visitor & v) = 0;
+	virtual void eval(void) = 0;
 };
 
 #include "Tree_Node.cpp"

@@ -39,8 +39,8 @@ public:
 	// Destructor
 	~Multiply_Node(void);
 
-	/// Traverses the tree
-	virtual void accept(Tree_Node_Visitor& v);
+	/// Returns the number node's value
+	int eval(void);
 };
 
 #include "Multiply_Node.cpp"
