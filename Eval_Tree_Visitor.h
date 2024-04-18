@@ -8,6 +8,7 @@
 #ifndef	_EVAL_TREE_VISITOR_H_
 #define _EVAL_TREE_VISITOR_H_
 
+#include "Tree_Node_Visitor.h"
 #include "Number_Node.h"
 
 /**
@@ -16,7 +17,7 @@
 * Defines a tree node that is composite and has 2 chidren
 * of type tree_node
 */
-class Eval_Tree_Visitor
+class Eval_Tree_Visitor : public Tree_Node_Visitor
 {
 public:
 	// Default constructor
