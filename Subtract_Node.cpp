@@ -40,5 +40,5 @@ Subtract_Node::~Subtract_Node(void)
 //
 int Subtract_Node::eval(void)
 {
-	return this->left_branch_->eval()  this->right_branch_->eval();
+	return this->left_branch_->eval() - this->right_branch_->eval();
 }
