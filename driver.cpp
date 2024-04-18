@@ -15,7 +15,7 @@
 #include "Multiply_Node.h"
 #include "Divide_Node.h"
 #include "Modulo_Node.h"
-#include "Postfix_Expression.h"
+#include "Postfix_Expr.h"
 
 /**
 * Pushes a command onto stack and pushes all in front of lesser priority onto postfix equation
