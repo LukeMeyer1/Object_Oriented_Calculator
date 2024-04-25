@@ -107,6 +107,11 @@ int main(int argc, char* argv[])
 	// COMMENT The program is to loop until QUIT is entered.
 	// RESPONSE: added loop with and check for QUIT to end.
 
+    // COMMENT This version of the calculator builds an expression tree and
+    // evaluates the expression tree using a visitor. Your design is creating
+    // a postfix expression of commands. Fix your design so it follows the
+    // assignment requirements.
+    
 	std::string infix;
 	Stack<int> result = Stack<int>();
 	Postfix_Builder build(result);
