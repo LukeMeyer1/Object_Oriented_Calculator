@@ -247,6 +247,7 @@ void Base_Array<T>::print()
             (*iter)->print();
             std::cout << ", ";
         }
-        std::cout << *(this->data_ + (this->cur_size_ - 1)) << std::endl;
+        *(this->data_ + (this->cur_size_ - 1))->print();
+        std::cout << std::endl;
     }
 }

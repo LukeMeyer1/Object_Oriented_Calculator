@@ -33,7 +33,8 @@ bool infix_to_postfix(std::istringstream & input,
 					  bool opened_parenthesis = false)
 {
 	std::string token;
-	b.start_expression();
+	if (!opened_parenthesis)
+		b.start_expression();
 	while (!input.eof()) {
 
 		input >> token;
