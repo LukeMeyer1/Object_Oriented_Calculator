@@ -43,14 +43,14 @@ public:
 	void end_expression(void);
 
 	// returns postfix expression
-	Math_Expression * get_expression(void);
+	Postfix_Expr * get_expression(void);
 
 private:
 	// helper function to add operator onto temp stack
 	void operator_onto_stack(Operator_Command * cmd);
 
 	// Array that stores the expression
-	Math_Expression * postfix_;
+	Postfix_Expr * postfix_;
 	// Factory that builds command
 	Stack_Command_Factory * factory_;
 	// Temporary operator stack
