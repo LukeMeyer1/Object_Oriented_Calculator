@@ -32,7 +32,6 @@ bool infix_to_postfix(std::istringstream & input,
 					  Postfix_Builder & b,
 					  bool opened_parenthesis = false)
 {
-	std::cout << "start in post- ";
 	std::string token;
 	if (!opened_parenthesis)
 		b.start_expression();
@@ -65,9 +64,7 @@ bool infix_to_postfix(std::istringstream & input,
 		else if (token == "(") {
 			// recursive call, will put all new postfix onto the same postfix equation until reaching a close parenthesis
 			// or the end of the statement
-			std::cout << "op paren build start- ";
 			Postfix_Builder parenthesis_builder(b);
-			std::cout << "op paren built- ";
 			bool did_run = infix_to_postfix(input, parenthesis_builder, true);
 			if (!did_run)
 				return false;
@@ -79,9 +76,7 @@ bool infix_to_postfix(std::istringstream & input,
 			if (opened_parenthesis) {
 				// empty temp stack onto end of postfix array
 
-				std::cout << "start close paren- ";
 				b.end_expression();
-				std::cout << "close paren fin- ";
 				return true;
 			}
 			return false;
