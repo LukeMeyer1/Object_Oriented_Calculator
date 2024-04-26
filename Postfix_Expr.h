@@ -15,7 +15,7 @@
 *
 * Array of Commands that represents a postfix expression
 */
-class Postfix_Expr : Math_Expression
+class Postfix_Expr : public Math_Expression
 {
 public:
 	// Default constructor
