@@ -32,6 +32,7 @@ bool infix_to_postfix(std::istringstream & input,
 					  Postfix_Builder & b,
 					  bool opened_parenthesis = false)
 {
+	std::cout << "start in post- ";
 	std::string token;
 	b.start_expression();
 	while (!input.eof()) {
