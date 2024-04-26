@@ -50,3 +50,10 @@ int Postfix_Expr::eval(void)
 	}
 	return result_->pop();
 }
+
+//
+//	print
+//
+void Postfix_Expr::print(void) {
+	this->expr_.print();
+}

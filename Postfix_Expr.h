@@ -28,8 +28,11 @@ public:
 	// empties the array
 	void reset(void);
 
-	/// Returns the expressions value
+	// Returns the expressions value
 	virtual int eval(void);
+
+	// Prints postfix expression
+	void print(void);
 
 private:
 	// Array that stores the expression

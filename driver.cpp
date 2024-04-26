@@ -126,6 +126,7 @@ int main(int argc, char* argv[])
 		if (infix_to_postfix(input, build)) {
 			// output result
 			postfix = build.postfix();
+			postfix.print();
 			std::cout << postfix.eval() << std::endl;
 		}
 		// if invalid infix expression, output error statement
