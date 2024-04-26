@@ -9,6 +9,7 @@
 #define _Binary_Operator_NODE_H_
 
 #include "Tree_Node.h"
+#include "Tree_Builder.h"
 
 /**
 * @class Binary Operator Node
