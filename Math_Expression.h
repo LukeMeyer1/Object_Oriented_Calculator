@@ -23,6 +23,9 @@ public:
 
 	// Returns the expressions value
 	virtual int eval(void) = 0;
+
+	//prints the expression
+	virtual void print(void) = 0;
 };
 
 #include "Math_Expression.cpp"
