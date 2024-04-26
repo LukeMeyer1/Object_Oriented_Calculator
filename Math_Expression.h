@@ -31,4 +31,6 @@ public:
 	virtual void print(void) = 0;
 };
 
+#include "Math_Expression.cpp"
+
 #endif   // !defined _MATH_EXPRESSION_H_

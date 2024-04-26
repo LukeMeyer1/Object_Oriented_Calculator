@@ -15,7 +15,7 @@
 *
 * Base node class by which all other operation and number nodes derive from
 */
-class Tree_Node : Math_Expression
+class Tree_Node : public Math_Expression
 {
 public:
 	//Default Constructor
