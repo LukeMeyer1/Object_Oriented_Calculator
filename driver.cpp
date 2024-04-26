@@ -129,7 +129,6 @@ int main(int argc, char* argv[])
 		if (infix_to_postfix(input, build)) {
 			// output result
 			postfix = build.get_expression();
-			postfix->print();
 			std::cout << postfix->eval() << std::endl;
 		}
 
