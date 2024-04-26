@@ -37,7 +37,7 @@ Postfix_Builder::~Postfix_Builder(void)
 //
 void Postfix_Builder::build_number(int num)
 {
-	postfix_.append(factory_.create_number_command(num));
+	postfix_->append(factory_->create_number_command(num));
 }
 
 //
@@ -46,7 +46,7 @@ void Postfix_Builder::build_number(int num)
 void Postfix_Builder::build_add_operator(void)
 {
 	
-	operator_onto_stack(factory_.create_add_command());
+	operator_onto_stack(factory_->create_add_command());
 }
 
 //
@@ -54,7 +54,7 @@ void Postfix_Builder::build_add_operator(void)
 //
 void Postfix_Builder::build_subtract_operator(void)
 {
-	operator_onto_stack(factory_.create_subtract_command());
+	operator_onto_stack(factory_->create_subtract_command());
 }
 
 //
@@ -62,7 +62,7 @@ void Postfix_Builder::build_subtract_operator(void)
 //
 void Postfix_Builder::build_multiply_operator(void) 
 {
-	operator_onto_stack(factory_.create_multiply_command());
+	operator_onto_stack(factory_->create_multiply_command());
 }
 
 //
@@ -70,7 +70,7 @@ void Postfix_Builder::build_multiply_operator(void)
 //
 void Postfix_Builder::build_divide_operator(void)
 {
-	operator_onto_stack(factory_.create_divide_command());
+	operator_onto_stack(factory_->create_divide_command());
 }
 
 //
@@ -78,7 +78,7 @@ void Postfix_Builder::build_divide_operator(void)
 //
 void Postfix_Builder::build_modulo_operator(void)
 {
-	operator_onto_stack(factory_.create_modulo_command());
+	operator_onto_stack(factory_->create_modulo_command());
 }
 
 //
@@ -86,7 +86,7 @@ void Postfix_Builder::build_modulo_operator(void)
 //
 void Postfix_Builder::start_expression(void)
 {
-	this->postfix_.reset();
+	this->postfix_->reset();
 	this->temp_.clear();
 }
 
@@ -96,15 +96,15 @@ void Postfix_Builder::start_expression(void)
 void Postfix_Builder::end_expression(void)
 {
 	while (!(this->temp_.is_empty())) {
-		this->postfix_.append(this->temp_.pop());
+		this->postfix_->append(this->temp_.pop());
 	}
-	postfix_.print();
+	postfix_->print();
 }
 
 //
 //	postfix
 //
-Postfix_Expr Postfix_Builder::postfix(void)
+Postfix_Expr * Postfix_Builder::postfix(void)
 {
 	return this->postfix_;
 }
@@ -116,7 +116,7 @@ void Postfix_Builder::operator_onto_stack(Operator_Command * cmd)
 {
 	// push command at top of stk onto postfix until reach command of lesser or equal priority as cmd
 	while ((this->temp_.size() > 0) and (cmd->priority() <= this->temp_.top()->priority())) {
-		this->postfix_.append(this->temp_.pop());
+		this->postfix_->append(this->temp_.pop());
 	}
 	// push add command onto the stack
 	this->temp_.push(cmd);
