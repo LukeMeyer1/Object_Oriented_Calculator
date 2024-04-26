@@ -18,6 +18,10 @@ class Math_Expression
 public:
 	// Returns the expressions value
 	virtual int eval(void) = 0;
+
+	virtual void reset(void) = 0;
+
+	virtual void append(Command* com) = 0;
 };
 
 #endif   // !defined _MATH_EXPRESSION_H_
