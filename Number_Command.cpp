@@ -29,3 +29,11 @@ void Number_Command::execute (void)
 {
 	this->s_.push(this->num_);
 }
+
+// 
+// print
+//
+void print(void)
+{
+	std::cout << this->num_;
+}

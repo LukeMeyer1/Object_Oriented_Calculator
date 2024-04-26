@@ -37,3 +37,11 @@ int Modulo_Command::priority(void)
 {
 	return 2;
 }
+
+// 
+// print
+//
+void print(void)
+{
+	std::cout << "%";
+}

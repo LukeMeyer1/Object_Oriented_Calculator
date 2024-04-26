@@ -40,6 +40,9 @@ public:
 	/// Returns the commands priority for infix to postfix
 	virtual int priority(void);
 
+	// Prints command
+	virtual void print(void);
+
 protected:
 	/// Pointer to the stack being operated on
 	Stack<int>& s_;

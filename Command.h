@@ -21,6 +21,7 @@ class Command
 public:
 	/// Operation that is executed on the stack
 	virtual void execute (void) = 0;
+	virtual void print (void) = 0;
 };
 
 #endif   // !defined _COMMAND_H_

@@ -23,6 +23,9 @@ public:
 
 	/// Returns the commands priority for infix to postfix
 	virtual int priority(void) = 0;
+
+	// Prints command
+	virtual void print(void) = 0;
 };
 
 #endif   // !defined _BINARY_OPERATOR_COMMAND_H_

@@ -37,3 +37,11 @@ int Add_Command::priority(void)
 {
 	return 1;
 }
+
+// 
+// print
+//
+void print(void)
+{
+	std::cout << "+";
+}

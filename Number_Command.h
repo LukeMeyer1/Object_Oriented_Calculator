@@ -33,6 +33,9 @@ public:
 	/// Pushes the value stored in 'num_' onto the stack
 	virtual void execute(void);
 
+	// Prints command
+	virtual void print(void);
+
 protected:
 	/// Pointer to the stack being operated on
 	Stack<int>& s_;
