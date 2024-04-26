@@ -115,8 +115,11 @@ int main(int argc, char* argv[])
 
 	std::string infix;
 	Stack<int> result = Stack<int>();
+	std::cout << "result built- ";
 	Postfix_Builder build(result);
+	std::cout << "build built- ";
 	Postfix_Expr postfix(result);
+	std::cout << "post built- ";
 	while (true) {
 		// get user input into 'infix'
 		infix = "";
