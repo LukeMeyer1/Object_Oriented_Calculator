@@ -98,7 +98,6 @@ void Postfix_Builder::end_expression(void)
 	while (!(this->temp_.is_empty())) {
 		this->postfix_->append(this->temp_.pop());
 	}
-	postfix_->print();
 }
 
 //

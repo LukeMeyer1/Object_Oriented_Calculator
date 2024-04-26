@@ -23,12 +23,6 @@ public:
 
 	// Returns the expressions value
 	virtual int eval(void) = 0;
-
-	virtual void reset(void) = 0;
-
-	virtual void append(Command* com) = 0;
-
-	virtual void print(void) = 0;
 };
 
 #include "Math_Expression.cpp"
