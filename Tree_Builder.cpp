@@ -24,55 +24,55 @@ Tree_Builder::~Tree_Builder(void)
 //
 // build number
 //
-void Tree_Node::build_number(int num)
+void Tree_Builder::build_number(int num)
 {}
 
 //
 // build add
 //
-void Tree_Node::build_add_operator(void)
+void Tree_Builder::build_add_operator(void)
 {}
 
 //
 // build subtract
 //
-void Tree_Node::build_subtract_operator(void)
+void Tree_Builder::build_subtract_operator(void)
 {}
 
 //
 // build multiply
 //
-void Tree_Node::build_multiply_operator(void)
+void Tree_Builder::build_multiply_operator(void)
 {}
 
 //
 // build divide
 //
-void Tree_Node::build_divide_operator(void)
+void Tree_Builder::build_divide_operator(void)
 {}
 
 //
 // build modulo
 //
-void Tree_Node::build_modulo_operator(void)
+void Tree_Builder::build_modulo_operator(void)
 {}
 
 //
 //	start expression
 //
-void Tree_Node::start_expression(void)
+void Tree_Builder::start_expression(void)
 {}
 
 //
 //	end expression
 //
-void Tree_Node::end_expression(void)
+void Tree_Builder::end_expression(void)
 {}
 
 //
 //	get expression
 //
-Tree_Node* Tree_Node::get_expression(void)
+Tree_Node * Tree_Builder::get_expression(void)
 {
 	return this->tree_;
 }
