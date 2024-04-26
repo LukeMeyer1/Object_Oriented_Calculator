@@ -41,7 +41,7 @@ int Modulo_Command::priority(void)
 // 
 // print
 //
-void print(void)
+void Modulo_Command::print(void)
 {
 	std::cout << "%";
 }

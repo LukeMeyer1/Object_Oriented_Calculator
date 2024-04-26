@@ -41,7 +41,7 @@ int Divide_Command::priority(void)
 // 
 // print
 //
-void print(void)
+void Divide_Command::print(void)
 {
 	std::cout << "/";
 }

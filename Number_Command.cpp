@@ -33,7 +33,7 @@ void Number_Command::execute (void)
 // 
 // print
 //
-void print(void)
+void Number_Command::print(void)
 {
 	std::cout << this->num_;
 }

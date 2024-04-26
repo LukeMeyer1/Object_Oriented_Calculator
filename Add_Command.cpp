@@ -41,7 +41,7 @@ int Add_Command::priority(void)
 // 
 // print
 //
-void print(void)
+void Add_Command::print(void)
 {
 	std::cout << "+";
 }

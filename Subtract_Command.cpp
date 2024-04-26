@@ -41,7 +41,7 @@ int Subtract_Command::priority(void)
 // 
 // print
 //
-void print(void)
+void Subtract_Command::print(void)
 {
 	std::cout << "-";
 }

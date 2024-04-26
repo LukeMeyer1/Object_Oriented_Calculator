@@ -41,7 +41,7 @@ int Multiply_Command::priority(void)
 // 
 // print
 //
-void print(void)
+void Multiply_Command::print(void)
 {
 	std::cout << "*";
 }
