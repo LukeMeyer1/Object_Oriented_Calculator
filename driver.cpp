@@ -132,6 +132,7 @@ int main(int argc, char* argv[])
 			postfix->print();
 			std::cout << postfix->eval() << std::endl;
 		}
+
 		// if invalid infix expression, output error statement
 		else
 			std::cout << "Invalid equation" << std::endl;

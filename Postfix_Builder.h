@@ -8,12 +8,14 @@
 #ifndef	_POSTFIX_BUILDER_H_
 #define _POSTFIX_BUILDER_H_
 
+#include "Expression_Builder.h"
+
 /**
 * @class Postfix Builder
 *
 * Array of Commands that represents a postfix expression
 */
-class Postfix_Builder
+class Postfix_Builder : Expression_Builder
 {
 public:
 	// Default constructor
