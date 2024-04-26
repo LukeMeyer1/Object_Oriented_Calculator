@@ -128,7 +128,7 @@ int main(int argc, char* argv[])
 		std::istringstream input(infix);
 		if (infix_to_postfix(input, build)) {
 			// output result
-			postfix = build.postfix();
+			postfix = build.get_expression();
 			postfix->print();
 			std::cout << postfix->eval() << std::endl;
 		}
