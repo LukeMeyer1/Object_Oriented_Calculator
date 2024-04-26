@@ -48,9 +48,9 @@ private:
 	void operator_onto_stack(Operator_Command * cmd);
 
 	// Array that stores the expression
-	Postfix_Expr & postfix_;
+	Postfix_Expr * postfix_;
 	// Factory that builds command
-	Stack_Command_Factory & factory_;
+	Stack_Command_Factory * factory_;
 	// Temporary operator stack
 	Stack <Operator_Command*> temp_;
 };
