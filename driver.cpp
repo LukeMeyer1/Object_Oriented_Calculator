@@ -63,6 +63,7 @@ bool infix_to_postfix(std::istringstream & input,
 		else if (token == "(") {
 			// recursive call, will put all new postfix onto the same postfix equation until reaching a close parenthesis
 			// or the end of the statement
+			std::cout << "op paren build start- ";
 			Postfix_Builder parenthesis_builder(b);
 			std::cout << "op paren built- ";
 			bool did_run = infix_to_postfix(input, parenthesis_builder, true);
