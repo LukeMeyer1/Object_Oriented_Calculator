@@ -8,12 +8,14 @@
 #ifndef	_TREE_NODE_H_
 #define _TREE_NODE_H_
 
+#include "Math_Expression.h"
+
 /**
 * @class Tree Node
 *
 * Base node class by which all other operation and number nodes derive from
 */
-class Tree_Node
+class Tree_Node : Math_Expression
 {
 public:
 	//Default Constructor

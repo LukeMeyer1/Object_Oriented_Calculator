@@ -1,0 +1,23 @@
+// -*- C++ -*-
+
+// Honor Pledge:
+//
+// I pledge that I have neither given nor received any help
+// on this assignment.
+
+#ifndef	_MATH_EXPRESSION_H_
+#define _MATH_EXPRESSION_H_
+
+/**
+* @class Math Expression
+*
+* Abstract class for math expressions
+*/
+class Math_Expression
+{
+public:
+	// Returns the expressions value
+	virtual int eval(void) = 0;
+};
+
+#endif   // !defined _MATH_EXPRESSION_H_

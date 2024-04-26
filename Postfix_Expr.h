@@ -8,12 +8,14 @@
 #ifndef	_POSTFIX_EXPR_H_
 #define _POSTFIX_EXPR_H_
 
+#include "Math_Expression.h"
+
 /**
 * @class Postfix Expr
 *
 * Array of Commands that represents a postfix expression
 */
-class Postfix_Expr
+class Postfix_Expr : Math_Expression
 {
 public:
 	// Default constructor
