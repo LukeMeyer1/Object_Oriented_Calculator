@@ -50,7 +50,7 @@ private:
 	void operator_onto_stack(Operator_Command * cmd);
 
 	// Array that stores the expression
-	Postfix_Expr * postfix_;
+	Math_Expression * postfix_;
 	// Factory that builds command
 	Stack_Command_Factory * factory_;
 	// Temporary operator stack
