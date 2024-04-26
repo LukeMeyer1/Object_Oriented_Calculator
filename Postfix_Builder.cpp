@@ -12,10 +12,13 @@
 // Postfix_Builder 
 //
 Postfix_Builder::Postfix_Builder(Stack<int>& result)
-	: postfix_((Postfix_Expr(result))&),
-	factory_((Stack_Command_Factory(result))&),
-	temp_(Stack <Operator_Command*>())
-{ }
+	: temp_(Stack <Operator_Command*>())
+{ 
+	p = Postfix_Expr(result);
+	cf = Stack_Command_Factory(result);
+	postfix_ = p&;
+	factory_ = cf&;
+}
 
 // 
 // Postfix_Builder 
