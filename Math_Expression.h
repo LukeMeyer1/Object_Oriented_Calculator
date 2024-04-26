@@ -16,6 +16,11 @@
 class Math_Expression
 {
 public:
+
+	Math_Expression(void);
+
+	~Math_Expression(void);
+
 	// Returns the expressions value
 	virtual int eval(void) = 0;
 
