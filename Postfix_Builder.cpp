@@ -14,8 +14,8 @@
 Postfix_Builder::Postfix_Builder(Stack<int>& result)
 	: temp_(Stack <Operator_Command*>())
 { 
-	p = Postfix_Expr(result);
-	cf = Stack_Command_Factory(result);
+	Postfix_Expr p (result);
+	Stack_Command_Factory cf (result);
 	postfix_ = p&;
 	factory_ = cf&;
 }
