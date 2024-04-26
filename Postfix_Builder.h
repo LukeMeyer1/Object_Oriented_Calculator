@@ -13,7 +13,7 @@
 /**
 * @class Postfix Builder
 *
-* Array of Commands that represents a postfix expression
+* Builder class that creates a postfix expression
 */
 class Postfix_Builder : public Expression_Builder
 {

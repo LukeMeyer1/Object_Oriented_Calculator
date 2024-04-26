@@ -31,5 +31,6 @@ project (assignment4) {
     Modulo_Node.cpp
     Postfix_Expr.cpp
     Postfix_Builder.cpp
+    Tree_Builder.cpp
   }
 }

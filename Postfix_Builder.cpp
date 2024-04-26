@@ -101,7 +101,7 @@ void Postfix_Builder::end_expression(void)
 }
 
 //
-//	postfix
+//	get expression
 //
 Postfix_Expr * Postfix_Builder::get_expression(void)
 {
