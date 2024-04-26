@@ -22,6 +22,8 @@ public:
 	virtual void reset(void) = 0;
 
 	virtual void append(Command* com) = 0;
+
+	virtual void print(void) = 0;
 };
 
 #endif   // !defined _MATH_EXPRESSION_H_
