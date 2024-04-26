@@ -43,7 +43,7 @@ public:
 	void end_expression(void);
 
 	// returns postfix expression
-	Postfix_Expr * get_expression(void);
+	Math_Expression * get_expression(void);
 
 private:
 	// helper function to add operator onto temp stack
