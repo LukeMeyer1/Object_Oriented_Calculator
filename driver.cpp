@@ -112,7 +112,7 @@ int main(int argc, char* argv[])
 	std::string infix;
 	Stack<int> result = Stack<int>();
 	Postfix_Builder build(result);
-	Postfix_Expr * postfix(result);
+	Postfix_Expr * postfix = new Postfix_Expr(result);
 
 	while (true) {
 		// get user input into 'infix'
@@ -129,8 +129,8 @@ int main(int argc, char* argv[])
 		if (infix_to_postfix(input, build)) {
 			// output result
 			postfix = build.postfix();
-			postfix.print();
-			std::cout << postfix.eval() << std::endl;
+			postfix->print();
+			std::cout << postfix->eval() << std::endl;
 		}
 		// if invalid infix expression, output error statement
 		else
