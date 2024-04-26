@@ -17,6 +17,15 @@ Postfix_Builder::Postfix_Builder(Stack<int>& result)
 	temp_(Stack <Operator_Command*>())
 { }
 
+// 
+// Postfix_Builder 
+//
+Postfix_Builder::Postfix_Builder(Postfix_Builder& builder)
+	:postfix_(builder->postfix_),
+	factory_(builder->factory_),
+	temp_(Stack <Operator_Command*>())
+{ }
+
 //
 // ~Postfix_Builder
 //

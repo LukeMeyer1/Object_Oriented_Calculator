@@ -33,8 +33,7 @@ bool infix_to_postfix(std::istringstream & input,
 					  bool opened_parenthesis = false)
 {
 	std::string token;
-	if (!opened_parenthesis)
-		b.start_expression();
+	b.start_expression();
 	while (!input.eof()) {
 
 		input >> token;
@@ -64,7 +63,8 @@ bool infix_to_postfix(std::istringstream & input,
 		else if (token == "(") {
 			// recursive call, will put all new postfix onto the same postfix equation until reaching a close parenthesis
 			// or the end of the statement
-			bool did_run = infix_to_postfix(input, b, true);
+			Postfix_Builder parenthesis_builder(b);
+			bool did_run = infix_to_postfix(input, parenthesis_builder, true);
 			if (!did_run)
 				return false;
 		}

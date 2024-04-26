@@ -19,6 +19,10 @@ public:
 	// Default constructor
 	Postfix_Builder(Stack<int>& result);
 
+	// Creates a builder that builds on the same postfix expression
+	// but has an empty temp command stack
+	Postfix_Builder(Postfix_Builder& builder);
+
 	// Destructor
 	~Postfix_Builder(void);
 
