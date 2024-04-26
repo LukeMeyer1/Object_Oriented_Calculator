@@ -104,7 +104,7 @@ void Postfix_Builder::end_expression(void)
 //
 //	postfix
 //
-Math_Expression * Postfix_Builder::get_expression(void)
+Postfix_Expr * Postfix_Builder::get_expression(void)
 {
 	return this->postfix_;
 }
