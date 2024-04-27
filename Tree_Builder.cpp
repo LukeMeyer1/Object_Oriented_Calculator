@@ -93,7 +93,7 @@ void Tree_Builder::build(Tree_Node* node)
 		this->tree_ = node;
 		return;
 	}
-	this->set_first_empty_node(this->tree_, node);
+	//this->set_first_empty_node(this->tree_, node);
 }
 
 //
