@@ -145,10 +145,4 @@ int main(int argc, char* argv[])
 	Tree_Builder build();
 	Math_Expression* tree = nullptr;
 
-	build.build_add_operator();
-	build.build_number(2);
-	build.build_number(3);
-
-	tree = build.get_expression();
-	tree->print();
 }
