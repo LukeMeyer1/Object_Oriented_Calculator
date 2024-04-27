@@ -20,6 +20,7 @@
 class Binary_Operator_Node : public Tree_Node
 {
 public:
+	friend class Tree_Builder;
 	// Default constructor
 	Binary_Operator_Node();
 
