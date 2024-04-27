@@ -9,6 +9,7 @@
 #define _TREE_BUILDER_H_
 
 #include "Expression_Builder.h"
+#include "Binary_Operator_Node.h"
 
 /**
 * @class Tree Builder

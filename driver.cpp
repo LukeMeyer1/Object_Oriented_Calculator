@@ -142,7 +142,6 @@ int main(int argc, char* argv[])
 	}
 	*/
 
-	std::string infix;
 	Tree_Builder build();
 	Math_Expression* tree = nullptr;
 
@@ -151,5 +150,5 @@ int main(int argc, char* argv[])
 	build.build_number(3);
 
 	tree = build.get_expression();
-	tree.print();
+	tree->print();
 }
