@@ -99,8 +99,9 @@ void Tree_Builder::build(Tree_Node* node)
 //
 //	set first empty node
 //
-//bool Tree_Builder::set_first_empty_node(Binary_Operator_Node* root, Tree_Node* node)
-//{
+bool Tree_Builder::set_first_empty_node(Binary_Operator_Node* root, Tree_Node* node)
+{
+	return true;
 	//if (root.left_branch_ == nullptr)
 	//{
 	//	root.left_branch_ = node;
@@ -112,4 +113,4 @@ void Tree_Builder::build(Tree_Node* node)
 	//	return true;
 	//}
 	//return false;
-//}
+}
