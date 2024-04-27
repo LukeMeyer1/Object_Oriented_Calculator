@@ -9,6 +9,7 @@
 #define _POSTFIX_BUILDER_H_
 
 #include "Expression_Builder.h"
+#include "Postfix_Expr.h"
 
 /**
 * @class Postfix Builder
