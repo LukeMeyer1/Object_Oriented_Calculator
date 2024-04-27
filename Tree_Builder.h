@@ -9,7 +9,6 @@
 #define _TREE_BUILDER_H_
 
 #include "Expression_Builder.h"
-#include "Binary_Operator_Node.h"
 
 /**
 * @class Tree Builder
@@ -48,7 +47,7 @@ private:
 
 	// traverses the tree in preorder traversal and sets the first open node 
 	// to 'add'. Returns true if completed or false if no open nodes found
-	bool set_first_empty_node(Binary_Operator_Node* root, Tree_Node* node);
+	bool set_first_empty_node(Tree_Node* root, Tree_Node* node);
 
 	// Array that stores the expression
 	Tree_Node* tree_;
