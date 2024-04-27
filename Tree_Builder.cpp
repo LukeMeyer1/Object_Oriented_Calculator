@@ -37,8 +37,6 @@ void Tree_Builder::build_number(int num)
 //
 void Tree_Builder::build_add_operator(void)
 {
-	Add_Node * node = new Add_Node();
-	this->build(node);
 }
 
 //
