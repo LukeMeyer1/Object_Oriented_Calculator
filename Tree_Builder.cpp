@@ -27,12 +27,7 @@ Tree_Builder::~Tree_Builder(void)
 void Tree_Builder::build_number(int num)
 {
 	Number_Node * node = new Number_Node(num);
-	if (this->tree_ == nullptr)
-	{
-		this->tree_ = node;
-		return;
-	}
-	this->set_first_empty_node(this->tree_, node)
+	this->build(node);
 }
 
 //
@@ -116,5 +111,5 @@ bool Tree_Builder::set_first_empty_node(Binary_Operator_Node* root, Tree_Node* n
 		root.right_branch_ = node;
 		return true;
 	}
-	return false
+	return false;
 }
