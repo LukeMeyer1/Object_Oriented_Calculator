@@ -28,3 +28,11 @@ int Number_Node::eval(void)
 {
 	return this->num_;
 }
+
+//
+// print
+//
+void Add_Node::print(void)
+{
+	std::cout << this->num_;
+}

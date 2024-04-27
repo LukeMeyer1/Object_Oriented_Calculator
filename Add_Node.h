@@ -39,8 +39,11 @@ public:
 	// Destructor
 	~Add_Node(void);
 
-	/// Returns the number node's value
-	int eval(void);
+	// Returns the number node's value
+	virtual int eval(void);
+
+	// prints the tree in postfix order
+	virtual void print(void);
 };
 
 #include "Add_Node.cpp"

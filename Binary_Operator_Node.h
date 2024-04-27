@@ -42,8 +42,11 @@ public:
 	// Destructor
 	~Binary_Operator_Node(void);
 
-	/// Returns the product of the operation on the left and right branches
+	// Returns the product of the operation on the left and right branches
 	virtual int eval() = 0;
+
+	// prints the tree in postfix order
+	virtual void print(void) = 0;
 
 protected:
 	Tree_Node* left_branch_;

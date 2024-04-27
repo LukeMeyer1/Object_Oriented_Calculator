@@ -42,3 +42,13 @@ int Add_Node::eval(void)
 {
 	return this->left_branch_->eval() + this->right_branch_->eval();
 }
+
+//
+// print
+//
+void Add_Node::print(void)
+{
+	this->left_branch_->print();
+	this->right_branch_->print();
+	std::cout << "+";
+}

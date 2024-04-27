@@ -18,14 +18,17 @@
 class Tree_Node : public Math_Expression
 {
 public:
-	//Default Constructor
+	// Default Constructor
 	Tree_Node(void);
 
-	//Destructor
+	// Destructor
 	~Tree_Node(void);
 
-	/// Traverses the tree
+	// Traverses the tree
 	virtual int eval(void) = 0;
+
+	// prints the tree in postfix order
+	virtual void print(void) = 0;
 };
 
 #include "Tree_Node.cpp"

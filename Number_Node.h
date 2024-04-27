@@ -25,8 +25,11 @@ public:
 	// Destructor
 	~Number_Node (void);
 
-	/// Returns the number node's value
+	// Returns the number node's value
 	virtual int eval(void);
+
+	// prints the value of num_
+	virtual void print(void);
 
 private:
 	// Value of the number node
