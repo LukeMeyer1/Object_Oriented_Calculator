@@ -32,7 +32,7 @@ int Number_Node::eval(void)
 //
 // print
 //
-void Add_Node::print(void)
+void Number_Node::print(void)
 {
 	std::cout << this->num_;
 }
