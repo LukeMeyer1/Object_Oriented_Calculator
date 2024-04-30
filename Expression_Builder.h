@@ -40,7 +40,7 @@ public:
 	* 
 	* @retval	Expression_Parser&		parser object that will work with the builder
 	*/
-	virtual Expression_Parser& parser(void) = 0;
+	virtual Expression_Parser * parser(void) = 0;
 };
 
 #endif   // !defined _EXPRESSION_BUILDER_H_
