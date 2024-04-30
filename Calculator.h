@@ -17,7 +17,7 @@ class Calculator
 {
 public:
 	/**
-	* Default Constructor
+	* Constructor
 	* 
 	* @param[in]	builder		reference to the builder that the Calculator will use
 	*/
@@ -44,7 +44,7 @@ public:
 
 private:
 	/// Reference to the builder used to parse
-	Postfix_Builder builder_;
+	Expression_Builder builder_;
 
 };
 
