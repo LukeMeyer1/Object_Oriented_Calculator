@@ -32,8 +32,8 @@ Calculator::~Calculator(void)
 //
 int Calculator::evaluate(const std::string& infix)
 {
-	if (!this->parse_expr(infix))
-		throw std::runtime_exception(“Bad expresssion”);
+	//if (!this->parse_expr(infix))
+	//	throw std::runtime_exception(“Bad expresssion”);
 	std::unique_ptr <Math_Expr> expr(this->builder_—>get_expression());
 	if (nullptr == expr.get())
 		throw std::runtime_exception(“No expression!!”);
