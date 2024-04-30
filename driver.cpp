@@ -47,11 +47,12 @@ int main(int argc, char* argv[])
 	
 	std::string infix;
 	Stack<int> result = Stack<int>();
-	Postfix_Builder build(result);
+	Postfix_Builder * build = new Postfix_Builder(result);
 	Math_Expression * postfix = new Postfix_Expr(result);
 	Calculator calc(build);
 
 	delete postfix;
+	delete build;
 /*
 	while (true) {
 		// get user input into 'infix'

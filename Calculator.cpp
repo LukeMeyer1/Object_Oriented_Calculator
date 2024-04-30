@@ -43,5 +43,5 @@ int Calculator::evaluate(const std::string& infix)
 bool Calculator::parse_expr(const std::string & infix)
 {
 	Expression_Parser * p = this->builder_->parser();
-	p->parse();
+	return p->parse();
 }
