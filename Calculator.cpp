@@ -42,6 +42,6 @@ int Calculator::evaluate(const std::string& infix)
 // 
 bool Calculator::parse_expr(const std::string & infix)
 {
-	Postfix_Parser p = this->builder_.parser();
-	p.parse();
+	Postfix_Parser * p = this->builder_.parser();
+	p->parse();
 }
