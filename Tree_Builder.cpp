@@ -80,9 +80,10 @@ void Tree_Builder::end_expression(void)
 //
 // parser
 //
-Expression_Parser & Postfix_Builder::parser(void)
+Expression_Parser * Postfix_Builder::parser(void)
 {
-	return Tree_Parser(this);
+	Tree_Parser * parser(this);
+	return parser;
 }
 
 //
