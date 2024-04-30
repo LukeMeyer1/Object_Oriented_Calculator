@@ -16,11 +16,8 @@
 class Calculator 
 {
 public:
-	/// Default Constructor
-	Calculator(void);
-
 	/**
-	* Constructor
+	* Default Constructor
 	* 
 	* @param[in]	builder		reference to the builder that the Calculator will use
 	*/

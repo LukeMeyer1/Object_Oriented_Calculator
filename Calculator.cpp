@@ -8,12 +8,6 @@
 #include "Calculator.h"
 #include <memory>
 
-//
-// Calculator
-//
-Calculator::Calculator(void)
-	: builder_(Postfix_Builder()) 
-{ }
 
 //
 // Calculator
