@@ -26,7 +26,7 @@ Postfix_Parser::~Postfix_Parser(void)
 bool Postfix_Parser::parse(const std::string & infix)
 {
 	std::istringstream input(infix);
-	return this->parse_equation(input, this->builder_);
+	return this->parse_equation(input, this->builder_, false);
 }
 
 //
@@ -34,7 +34,7 @@ bool Postfix_Parser::parse(const std::string & infix)
 //
 bool Postfix_Parser::parse_equation(std::istringstream& input,
 									Postfix_Builder& b,
-									bool opened_parenthesis = false)
+									bool opened_parenthesis)
 {
 	std::string token;
 	if (!opened_parenthesis)
