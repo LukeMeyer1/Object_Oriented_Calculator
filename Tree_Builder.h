@@ -47,7 +47,7 @@ public:
 	*
 	* @retval	Expression_Parser&		tree parser that will work with the builder
 	*/
-	Expression_Parser * parser(void);
+	Expression_Parser & parser(void);
 
 private:
 	// builds a node
