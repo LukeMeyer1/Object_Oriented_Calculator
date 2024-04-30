@@ -6,6 +6,7 @@
 // on this assignment.
 
 #include "Calculator.h"
+#include <memory>
 
 //
 // Calculator

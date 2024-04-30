@@ -51,6 +51,8 @@ int main(int argc, char* argv[])
 	Math_Expression * postfix = new Postfix_Expr(result);
 	Calculator calc(Postfix_Builder());
 
+	delete postfix;
+/*
 	while (true) {
 		// get user input into 'infix'
 		infix = "";
@@ -77,7 +79,7 @@ int main(int argc, char* argv[])
 		std::cout << std::endl;
 	}
 	
-/*
+
 	Tree_Builder b = Tree_Builder();
 	Math_Expression* tree = nullptr;
 
