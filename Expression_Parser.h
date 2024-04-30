@@ -27,7 +27,7 @@ public:
 	* 
 	* @retval	bool	true if equation can be parsed, false if not
 	*/
-	virtual bool parse(const std::string infix) = 0;
+	virtual bool parse(const std::string & infix) = 0;
 };
 
 #include "Expression_Parser.cpp"

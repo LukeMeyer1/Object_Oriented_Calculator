@@ -33,7 +33,7 @@ public:
 	*
 	* @retval	bool	true if equation can be parsed, false if not
 	*/
-	bool parse(const std::string infix);
+	bool parse(const std::string & infix);
 
 private:
 	/// Reference to the builder used to parse
