@@ -21,7 +21,7 @@ public:
 	* 
 	* @param[in]	builder		reference to the builder that the Calculator will use
 	*/
-	Calculator(Postfix_Builder & builder);
+	Calculator(Expression_Builder * builder);
 	
 	/// Destructor
 	~Calculator(void);
