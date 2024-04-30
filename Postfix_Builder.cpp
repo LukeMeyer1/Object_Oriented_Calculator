@@ -113,7 +113,7 @@ Postfix_Expr * Postfix_Builder::get_expression(void)
 //
 Expression_Parser & Postfix_Builder::parser(void)
 {
-	return Postfix_Parser();
+	return Postfix_Parser(this);
 }
 
 //

@@ -82,7 +82,7 @@ void Tree_Builder::end_expression(void)
 //
 Expression_Parser& Postfix_Builder::parser(void)
 {
-	return Tree_Parser();
+	return Tree_Parser(this);
 }
 
 //
