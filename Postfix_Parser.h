@@ -45,7 +45,7 @@ private:
 	*									false if there aren't any opened parenthesis found in the expression 
 	* @retval		bool				true if parsed correctly false if couldn't parse
 	*/
-	bool parse_equation(std::istringstream& input, Postfix_Builder& b, bool opened_parenthesis = false);
+	bool parse_equation(std::istringstream& input, Postfix_Builder& b, bool opened_parenthesis);
 
 	/// Reference to the builder used to parse
 	Postfix_Builder builder_;
