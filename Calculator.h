@@ -44,7 +44,7 @@ public:
 
 private:
 	/// Reference to the builder used to parse
-	Expression_Builder builder_;
+	Expression_Builder * builder_;
 
 };
 
