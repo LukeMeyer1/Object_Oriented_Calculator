@@ -51,7 +51,7 @@ public:
 	*
 	* @retval	Expression_Parser&		postfix parser that will work with the builder
 	*/
-	Postfix_Parser * parser(void);
+	Expression_Parser * parser(void);
 
 private:
 	// helper function to add operator onto temp stack
