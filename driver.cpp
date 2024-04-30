@@ -48,12 +48,9 @@ int main(int argc, char* argv[])
 	std::string infix;
 	Stack<int> result = Stack<int>();
 	Postfix_Builder * build = new Postfix_Builder(result);
-	Math_Expression * postfix = new Postfix_Expr(result);
-	Calculator c(build);
+	Calculator calc(build);
 
-	delete postfix;
-	delete build;
-/*
+
 	while (true) {
 		// get user input into 'infix'
 		infix = "";
@@ -64,23 +61,12 @@ int main(int argc, char* argv[])
 		if (infix == "QUIT")
 			return 0;
 
-		// translate infix equation to postfix and solve if infix was valid
-		std::istringstream input(infix);
-		if (infix_to_postfix(input, build)) {
-			// output result
-			postfix = build.get_expression();
-			postfix->print();
-			std::cout << postfix->eval() << std::endl;
-		}
-
-		// if invalid infix expression, output error statement
-		else
-			std::cout << "Invalid equation" << std::endl;
-
-		std::cout << std::endl;
+		// solve equation and print it out
+		std::cout << calc.evaluate(infix) << std::endl;
 	}
 	
-
+	delete build;
+/*
 	Tree_Builder b = Tree_Builder();
 	Math_Expression* tree = nullptr;
 
