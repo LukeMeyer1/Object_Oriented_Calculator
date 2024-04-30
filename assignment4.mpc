@@ -32,5 +32,8 @@ project (assignment4) {
     Postfix_Expr.cpp
     Postfix_Builder.cpp
     Tree_Builder.cpp
+    Postfix_Parser.cpp
+    Tree_Parser.cpp
+    Calculator.cpp
   }
 }
