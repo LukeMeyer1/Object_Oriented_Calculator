@@ -24,7 +24,7 @@ public:
 	* 
 	* @param[in]	builder		reference to the builder that the Calculator will use
 	*/
-	Calculator(Expression_Builder & builder);
+	Calculator(Postfix_Builder & builder);
 	
 	/// Destructor
 	~Calculator(void);
@@ -47,7 +47,7 @@ public:
 
 private:
 	/// Reference to the builder used to parse
-	Expression_Builder builder_;
+	Postfix_Builder builder_;
 
 };
 

@@ -11,7 +11,7 @@
 // Calculator
 //
 Calculator::Calculator(void)
-	: builder_(Tree_Builder()) 
+	: builder_(Postfix_Builder()) 
 { }
 
 //
