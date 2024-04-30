@@ -114,7 +114,7 @@ Postfix_Expr * Postfix_Builder::get_expression(void)
 //
 Expression_Parser * Postfix_Builder::parser(void)
 {
-	Postfix_Parser * parser(*this);
+	Postfix_Parser * parser = new Postfix_Parser(*this);
 	return parser;
 }
 
