@@ -142,7 +142,7 @@ int main(int argc, char* argv[])
 	}
 	*/
 
-	Tree_Builder b();
+	Tree_Builder b = Tree_Builder();
 	Math_Expression* tree = nullptr;
 
 	b.build_add_operator();
