@@ -23,10 +23,19 @@ Postfix_Parser::~Postfix_Parser(void)
 //
 // parse
 //
-bool Postfix_Parser::parse()
+bool Postfix_Parser::parse(const std::string & infix)
 {
-	return true;
-	/*
+	std::istringstream input(infix);
+	return this->parse_equation(input, this->builder_);
+}
+
+//
+// parse equation
+//
+bool Postfix_Parser::parse_equation(std::istringstream& input,
+									Postfix_Builder& b,
+									bool opened_parenthesis = false)
+{
 	std::string token;
 	if (!opened_parenthesis)
 		this->builder_.start_expression();
@@ -36,23 +45,23 @@ bool Postfix_Parser::parse()
 
 		// Plus operator
 		if (token == "+") {
-			this->builder_.build_add_operator();
+			b.build_add_operator();
 		}
 		// Minus operator
 		else if (token == "-") {
-			this->builder_.build_subtract_operator();
+			b.build_subtract_operator();
 		}
 		// Multiply operator
 		else if (token == "*") {
-			this->builder_.build_multiply_operator();
+			b.build_multiply_operator();
 		}
 		// Divide operator
 		else if (token == "/") {
-			this->builder_.build_divide_operator();
+			b.build_divide_operator();
 		}
 		// Modulo operator
 		else if (token == "%") {
-			this->builder_.build_modulo_operator();
+			b.build_modulo_operator();
 		}
 
 		// Open parenthesis operator
@@ -60,7 +69,7 @@ bool Postfix_Parser::parse()
 			// recursive call, will put all new postfix onto the same postfix equation until reaching a close parenthesis
 			// or the end of the statement
 			Postfix_Builder parenthesis_builder(b);
-			bool did_run = infix_to_postfix(input, parenthesis_builder, true);
+			bool did_run = this->parse_equation(input, parenthesis_builder, true);
 			if (!did_run)
 				return false;
 		}
@@ -93,5 +102,4 @@ bool Postfix_Parser::parse()
 	}
 	// open parenthesis never closed
 	return false;
-	*/
 }

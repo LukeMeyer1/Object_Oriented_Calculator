@@ -23,7 +23,7 @@ Tree_Parser::~Tree_Parser(void)
 //
 // parse
 //
-bool Tree_Parser::parse()
+bool Tree_Parser::parse(const std::string infix)
 {
 	return true;
 }

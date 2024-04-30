@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
 	Stack<int> result = Stack<int>();
 	Postfix_Builder * build = new Postfix_Builder(result);
 	Math_Expression * postfix = new Postfix_Expr(result);
-	Calculator calc(build);
+	Calculator c(build);
 
 	delete postfix;
 	delete build;

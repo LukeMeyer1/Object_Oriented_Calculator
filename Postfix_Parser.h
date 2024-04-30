@@ -33,11 +33,25 @@ public:
 	*
 	* @retval	bool	true if equation can be parsed, false if not
 	*/
-	bool parse(void);
+	bool parse(const std::string infix);
 
 private:
+	/**
+	* recursive helper function for the parse function
+	* 
+	* @param[in]	input				reference to an istringstream object that contains the infix expression
+	* @param[in]	b					builder that is being used
+	* @param[in]	opened_parenthesis	true if function call is being made by an open parenthesis in the expression, 
+	*									false if there aren't any opened parenthesis found in the expression 
+	* @retval		bool				true if parsed correctly false if couldn't parse
+	*/
+	bool parse_equation(std::istringstream& input, Postfix_Builder& b, bool opened_parenthesis = false);
+
 	/// Reference to the builder used to parse
 	Postfix_Builder builder_;
+	
+	/// infix expression being parsed
+	std::string infix;
 };
 
 #include "Postfix_Parser.cpp"
