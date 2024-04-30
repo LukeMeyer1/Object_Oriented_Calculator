@@ -9,7 +9,7 @@
 #define _Binary_Operator_NODE_H_
 
 #include "Tree_Node.h"
-#include "Tree_Builder.h"
+//#include "Tree_Builder.h"
 
 /**
 * @class Binary Operator Node
@@ -20,7 +20,7 @@
 class Binary_Operator_Node : public Tree_Node
 {
 public:
-	friend class Tree_Builder;
+	//friend class Tree_Builder;
 	// Default constructor
 	Binary_Operator_Node();
 
