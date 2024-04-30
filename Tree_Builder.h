@@ -41,13 +41,13 @@ public:
 	// returns tree root node
 	Tree_Node * get_expression(void);
 
-private:
-	// builds a node
-	void build(Tree_Node* node);
-
 	// traverses the tree in preorder traversal and sets the first open node 
 	// to 'add'. Returns true if completed or false if no open nodes found
 	bool set_first_empty_node(Binary_Operator_Node& node);
+
+private:
+	// builds a node
+	void build(Tree_Node* node);
 
 	// Array that stores the expression
 	Tree_Node* tree_;
