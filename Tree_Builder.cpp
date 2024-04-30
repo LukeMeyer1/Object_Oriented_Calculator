@@ -29,7 +29,7 @@ Tree_Builder::~Tree_Builder(void)
 void Tree_Builder::build_number(int num)
 {
 	Number_Node * node = new Number_Node(num);
-	this->build(node);
+	this->set_first_empty_node(node);
 }
 
 //
@@ -38,7 +38,7 @@ void Tree_Builder::build_number(int num)
 void Tree_Builder::build_add_operator(void)
 {
 	Add_Node * node = new Add_Node();
-	this->build(node);
+	this->build_operator(node);
 }
 
 //
@@ -88,7 +88,7 @@ Tree_Node * Tree_Builder::get_expression(void)
 //
 // build 
 //
-void Tree_Builder::build(Tree_Node* node) 
+void Tree_Builder::build_operator(Binary_Operator_Node* node) 
 {
 	if (this->tree_ == nullptr)
 	{
@@ -103,14 +103,14 @@ void Tree_Builder::build(Tree_Node* node)
 //
 bool Tree_Builder::set_first_empty_node(Tree_Node* node)
 {
-	if (this->tree_.left_branch_ == nullptr)
+	if (this->tree_->left_branch_ == nullptr)
 	{
-		this->tree_.left_branch_ = node;
+		this->tree_->left_branch_ = node;
 		return true;
 	}
-	else if (this->tree_.right_branch_ == nullptr)
+	else if (this->tree_->right_branch_ == nullptr)
 	{
-		this->tree_.right_branch_ = node;
+		this->tree_->right_branch_ = node;
 		return true;
 	}
 	return false;
