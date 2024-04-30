@@ -12,7 +12,7 @@
 //
 // Calculator
 //
-Calculator::Calculator(Expression_Builder& builder)
+Calculator::Calculator(Postfix_Builder& builder)
 	: builder_(builder) 
 { }
 
