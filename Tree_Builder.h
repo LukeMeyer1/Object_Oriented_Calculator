@@ -43,7 +43,7 @@ public:
 
 private:
 	// builds a node
-	void build(Tree_Node* node);
+	void build_operator(Binary_Operator_Node* node);
 
 	// traverses the tree in preorder traversal and sets the first open node 
 	// to 'add'. Returns true if completed or false if no open nodes found
