@@ -95,22 +95,22 @@ void Tree_Builder::build(Tree_Node* node)
 		this->tree_ = node;
 		return;
 	}
-	this->set_first_empty_node(this->tree_, node);
+	this->set_first_empty_node(node);
 }
 
 //
 //	set first empty node
 //
-bool Tree_Builder::set_first_empty_node(Binary_Operator_Node& root, Tree_Node* node)
+bool Tree_Builder::set_first_empty_node(Tree_Node* node)
 {
-	if (root.left_branch_ == nullptr)
+	if (this->tree_.left_branch_ == nullptr)
 	{
-		root.left_branch_ = node;
+		this->tree_.left_branch_ = node;
 		return true;
 	}
-	else if (root.right_branch_ == nullptr)
+	else if (this->tree_.right_branch_ == nullptr)
 	{
-		root.right_branch_ = node;
+		this->tree_.right_branch_ = node;
 		return true;
 	}
 	return false;
