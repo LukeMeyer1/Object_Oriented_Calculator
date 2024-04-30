@@ -11,7 +11,7 @@
 // Tree_Parser
 //
 Tree_Parser::Tree_Parser(Tree_Builder& builder)
-	: Expression_Parser(builder)
+	: builder_(builder)
 { }
 
 //

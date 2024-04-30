@@ -11,7 +11,7 @@
 // Postfix_Parser
 //
 Postfix_Parser::Postfix_Parser(Postfix_Builder& builder)
-	:Expression_Parser(builder)
+	:builder_(builder)
 { }
 
 //

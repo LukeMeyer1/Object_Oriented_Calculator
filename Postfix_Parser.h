@@ -34,6 +34,10 @@ public:
 	* @retval	bool	true if equation can be parsed, false if not
 	*/
 	bool parse(void);
+
+private:
+	/// Reference to the builder used to parse
+	Postfix_Builder builder_;
 };
 
 #include "Postfix_Parser.cpp"

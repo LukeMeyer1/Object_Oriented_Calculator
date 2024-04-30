@@ -10,8 +10,7 @@
 //
 // Expression_Parser
 //
-Expression_Parser::Expression_Parser(Expression_Builder& builder)
-	:builder_(builder)
+Expression_Parser::Expression_Parser(void)
 { }
 
 //

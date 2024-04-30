@@ -8,6 +8,8 @@
 #ifndef	_EXPRESSION_BUILDER_H_
 #define _EXPRESSION_BUILDER_H_
 
+#include "Expression_Parser.h"
+
 /**
 * @class Expression Builder
 *
