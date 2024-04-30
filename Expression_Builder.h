@@ -32,6 +32,13 @@ public:
 
 	// returns postfix expression
 	virtual Math_Expression * get_expression(void) = 0;
+
+	/**
+	* Creates a parser for the builder to work with
+	* 
+	* @retval	Expression_Parser&		parser object that will work with the builder
+	*/
+	virtual Expression_Parser& parser(void) = 0;
 };
 
 #endif   // !defined _EXPRESSION_BUILDER_H_

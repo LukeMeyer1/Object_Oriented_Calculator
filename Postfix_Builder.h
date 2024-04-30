@@ -46,6 +46,13 @@ public:
 	// returns postfix expression
 	Postfix_Expr * get_expression(void);
 
+	/**
+	* Creates a postfix parser for the builder to work with
+	*
+	* @retval	Expression_Parser&		postfix parser that will work with the builder
+	*/
+	Expression_Parser & parser(void);
+
 private:
 	// helper function to add operator onto temp stack
 	void operator_onto_stack(Operator_Command * cmd);

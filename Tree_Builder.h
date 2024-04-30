@@ -41,6 +41,13 @@ public:
 	// returns tree root node
 	Tree_Node * get_expression(void);
 
+	/**
+	* Creates a tree parser for the builder to work with
+	*
+	* @retval	Expression_Parser&		tree parser that will work with the builder
+	*/
+	Expression_Parser & parser(void);
+
 private:
 	// builds a node
 	void build_operator(Binary_Operator_Node* node);

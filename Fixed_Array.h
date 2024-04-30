@@ -27,7 +27,6 @@ public:
 	/**
 	 * Initializing constructor.
 	 *
-	 * @param[in]      length        Initial size
 	 * @param[in]      fill          Initial value for each element
 	 */
 	Fixed_Array(T fill);
