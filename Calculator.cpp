@@ -27,6 +27,7 @@ int Calculator::evaluate(const std::string& infix)
 {
 	if (!this->parse_expr(infix))
 		throw std::runtime_error("Bad Expression");
+	this->builder_->get_expression()->print();
 	if (nullptr == this->builder_->get_expression())
 		throw std::runtime_error("No Expression");
 	std::cout << "parsed" << std::endl;
