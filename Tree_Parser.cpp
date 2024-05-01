@@ -97,7 +97,8 @@ bool Tree_Parser::parse(const std::string & infix)
 		else
 			token << index;
 	}
-	std::cout << "loop exit: " << infix << std::endl;
+	std::cout << "loop exit: ";
+	std::cout << infix << std::endl;
 	// end of loop and have found operator with least priority
 	// check that operator was found
 	// if found then build operator and recursively call both sides of the operator
@@ -137,6 +138,7 @@ bool Tree_Parser::parse(const std::string & infix)
 	// else build a number node
 	else
 	{
+		std::cout << "enter number create" << std::endl;
 		this->builder_.build_number(stoi(token.str()));
 		return true;
 	}
