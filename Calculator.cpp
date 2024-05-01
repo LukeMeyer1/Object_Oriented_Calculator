@@ -31,13 +31,14 @@ int Calculator::evaluate(const std::string& infix)
 	std::cout << "post parse" << std::endl;
 	//if (!this->parse_expr(infix))
 	//	throw std::runtime_exception(“Bad expresssion”);
+	return this->builder_->get_expression()->eval;
 	std::cout << "pre get expression" << std::endl;
-	Math_Expression expr(this->builder_->get_expression());
+	//Math_Expression expr();
 	std::cout << "post get expression" << std::endl;
 	//if (nullptr == expr.get())
 	//	throw std::runtime_exception(“No expression!!”);
 	// evaluate the expression
-	this->builder_->get_expression()->print();
+	expr->print();
 	std::cout << std::endl << "pre eval" << std::endl;
 	return expr->eval();
 }
