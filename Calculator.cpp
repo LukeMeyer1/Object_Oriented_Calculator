@@ -27,13 +27,18 @@ Calculator::~Calculator(void)
 //
 int Calculator::evaluate(const std::string& infix)
 {
+	std::count << "pre parse" << std::endl;
 	this->parse_expr(infix);
+	std::count << "post parse" << std::endl;
 	//if (!this->parse_expr(infix))
 	//	throw std::runtime_exception(“Bad expresssion”);
+	std::count << "pre get expression" << std::endl;
 	std::unique_ptr <Math_Expression> expr(this->builder_->get_expression());
+	std::count << "post get expression" << std::endl;
 	//if (nullptr == expr.get())
 	//	throw std::runtime_exception(“No expression!!”);
 	// evaluate the expression
+	std::count << "pre eval" << std::endl;
 	return expr->eval();
 }
 
