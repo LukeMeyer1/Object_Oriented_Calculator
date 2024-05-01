@@ -110,8 +110,8 @@ bool Tree_Parser::parse(const std::string & infix)
 		std::cout << "enter priority > 0" << std::endl;
 		if (least_pri_token == "+") {
 			std::cout << "+ operator started" << std::endl;
-			this->builder_.build_add_operator();
-			this->builder_.get_expression()->print();
+			this->builder_->build_add_operator();
+			this->builder_->get_expression()->print();
 			std::cout << "+ operator built" << std::endl;
 			std::cout << "left ( 0 , "<< least_pri_index - 1 << " ): " << infix.substr(0, least_pri_index - 1) << std::endl;
 			if (!this->parse(infix.substr(0, least_pri_index - 1))) { return false; }
@@ -121,22 +121,22 @@ bool Tree_Parser::parse(const std::string & infix)
 			std::cout << "parse right finished: " << std::endl;
 		}
 		if (least_pri_token == "-") {
-			this->builder_.build_subtract_operator();
+			this->builder_->build_subtract_operator();
 			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
 		}
 		if (least_pri_token == "*") {
-			this->builder_.build_multiply_operator();
+			this->builder_->build_multiply_operator();
 			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
 		}
 		if (least_pri_token == "/") {
-			this->builder_.build_divide_operator();
+			this->builder_->build_divide_operator();
 			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
 		}
 		if (least_pri_token == "%") {
-			this->builder_.build_modulo_operator();
+			this->builder_->build_modulo_operator();
 			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
 		}
@@ -145,12 +145,12 @@ bool Tree_Parser::parse(const std::string & infix)
 	else
 	{
 		std::cout << "enter number create" << std::endl;
-		this->builder_.build_number(stoi(infix));
+		this->builder_->build_number(stoi(infix));
 		std::cout << "print in number" << std::endl;
-		this->builder_.get_expression()->print();
+		this->builder_->get_expression()->print();
 		return true;
 	}
 	std::cout << "print in parser" << std::endl;
-	this->builder_.get_expression()->print();
+	this->builder_->get_expression()->print();
 	return true;
 }
