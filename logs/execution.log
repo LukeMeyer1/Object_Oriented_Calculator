@@ -1,0 +1,6 @@
+Type your equation
+11+11+2
+Type your equation
+terminate called after throwing an instance of 'std::invalid_argument'
+  what():  stoi
+Command '/home/hilljh/sandbox/cs363/assignment4/meyerlf/cs363-spring2024-assignment4/assignment4' died with <Signals.SIGABRT: 6>.
