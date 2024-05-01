@@ -147,5 +147,6 @@ bool Tree_Parser::parse(const std::string & infix)
 		this->builder_.build_number(stoi(infix));
 		return true;
 	}
+	this->builder_.get_expression()->print();
 	return true;
 }
