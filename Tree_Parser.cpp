@@ -94,7 +94,7 @@ bool Tree_Parser::parse(const std::string & infix)
 				}
 			}
 			//clear token
-			token.str(std::string())
+			token.str(std::string());
 		}
 		// if not end of token then add to token
 		else
