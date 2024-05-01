@@ -48,7 +48,9 @@ int Add_Node::eval(void)
 //
 void Add_Node::print(void)
 {
-	this->left_branch_->print();
-	this->right_branch_->print();
+	try {
+		this->left_branch_->print();
+		this->right_branch_->print();
+	}catch(...){ }
 	std::cout << "+";
 }

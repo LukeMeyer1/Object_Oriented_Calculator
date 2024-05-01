@@ -111,6 +111,7 @@ bool Tree_Parser::parse(const std::string & infix)
 		if (least_pri_token == "+") {
 			std::cout << "+ operator started" << std::endl;
 			this->builder_.build_add_operator();
+			this->builder.get_expression()->print();
 			std::cout << "+ operator built" << std::endl;
 			std::cout << "left ( 0 , "<< least_pri_index - 1 << " ): " << infix.substr(0, least_pri_index - 1) << std::endl;
 			if (!this->parse(infix.substr(0, least_pri_index - 1))) { return false; }
