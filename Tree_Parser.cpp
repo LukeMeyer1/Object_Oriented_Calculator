@@ -145,6 +145,8 @@ bool Tree_Parser::parse(const std::string & infix)
 	{
 		std::cout << "enter number create" << std::endl;
 		this->builder_.build_number(stoi(infix));
+		std::cout << "print in number" << std::endl;
+		this->builder_.get_expression()->print();
 		return true;
 	}
 	std::cout << "print in parser" << std::endl;
