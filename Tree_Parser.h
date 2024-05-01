@@ -23,7 +23,7 @@ public:
 	*
 	* @param[in]	Tree_Builder		builder that the parser is working with
 	*/
-	Tree_Parser(Tree_Builder& builder);
+	Tree_Parser(Tree_Builder* builder);
 
 	/// Destructor
 	~Tree_Parser(void);
@@ -37,7 +37,7 @@ public:
 
 private:
 	/// Reference to the builder used to parse
-	Tree_Builder builder_;
+	Tree_Builder * builder_;
 };
 
 #include "Tree_Parser.cpp"

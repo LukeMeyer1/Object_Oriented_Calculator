@@ -83,7 +83,7 @@ void Tree_Builder::end_expression(void)
 //
 Expression_Parser * Tree_Builder::parser(void)
 {
-	Tree_Parser * parser = new Tree_Parser(*this);
+	Tree_Parser * parser = new Tree_Parser(this);
 	return parser;
 }
 

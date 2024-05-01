@@ -10,7 +10,7 @@
 //
 // Postfix_Parser
 //
-Postfix_Parser::Postfix_Parser(Postfix_Builder* builder)
+Postfix_Parser::Postfix_Parser(Postfix_Builder& builder)
 	:builder_(builder)
 { }
 

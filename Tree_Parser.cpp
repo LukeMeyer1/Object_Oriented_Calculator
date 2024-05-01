@@ -12,7 +12,7 @@
 //
 // Tree_Parser
 //
-Tree_Parser::Tree_Parser(Tree_Builder& builder)
+Tree_Parser::Tree_Parser(Tree_Builder* builder)
 	: builder_(builder)
 { }
 
