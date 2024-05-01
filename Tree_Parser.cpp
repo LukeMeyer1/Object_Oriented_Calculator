@@ -98,7 +98,6 @@ bool Tree_Parser::parse(const std::string & infix)
 		else
 			token << index;
 	}
-	std::cout << infix << std::endl;
 	// end of loop and have found operator with least priority
 	// check that operator was found
 	// if found then build operator and recursively call both sides of the operator
