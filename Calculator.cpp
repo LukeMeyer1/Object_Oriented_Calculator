@@ -31,6 +31,7 @@ int Calculator::evaluate(const std::string& infix)
 	std::cout << "post parse" << std::endl;
 	//if (!this->parse_expr(infix))
 	//	throw std::runtime_exception(“Bad expresssion”);
+	std::cout << std::endl << "pre eval" << std::endl;
 	return this->builder_->get_expression()->eval();
 	std::cout << "pre get expression" << std::endl;
 	//Math_Expression expr();
@@ -39,8 +40,7 @@ int Calculator::evaluate(const std::string& infix)
 	//	throw std::runtime_exception(“No expression!!”);
 	// evaluate the expression
 	//expr->print();
-	std::cout << std::endl << "pre eval" << std::endl;
-	return expr->eval();
+	//return expr->eval();
 }
 
 //
