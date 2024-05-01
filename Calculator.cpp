@@ -7,7 +7,6 @@
 
 #include "Calculator.h"
 
-
 //
 // Calculator
 //
@@ -26,21 +25,11 @@ Calculator::~Calculator(void)
 //
 int Calculator::evaluate(const std::string& infix)
 {
-	std::cout << "pre parse" << std::endl;
-	this->parse_expr(infix);
-	std::cout << "post parse" << std::endl;
-	//if (!this->parse_expr(infix))
-	//	throw std::runtime_exception(“Bad expresssion”);
-	std::cout << std::endl << "pre eval" << std::endl;
+	if (!this->parse_expr(infix))
+		throw std::runtime_error(“Bad expresssion”);
+	if (nullptr == this->builder_->get_expression())
+		throw std::runtime_error(No expresssion”);
 	return this->builder_->get_expression()->eval();
-	std::cout << "pre get expression" << std::endl;
-	//Math_Expression expr();
-	std::cout << "post get expression" << std::endl;
-	//if (nullptr == expr.get())
-	//	throw std::runtime_exception(“No expression!!”);
-	// evaluate the expression
-	//expr->print();
-	//return expr->eval();
 }
 
 //

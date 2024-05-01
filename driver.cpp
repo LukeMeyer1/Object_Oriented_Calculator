@@ -62,7 +62,14 @@ int main(int argc, char* argv[])
 			return 0;
 
 		// solve equation and print it out
+		try
+		{
 		std::cout << calc.evaluate(infix) << std::endl;
+		}
+		catch (const std::runtime_error & e)
+		{
+			std::cout << e.what() << std::endl;
+		}
 	}
 	
 	delete build;
