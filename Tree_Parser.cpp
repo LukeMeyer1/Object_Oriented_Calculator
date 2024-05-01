@@ -41,7 +41,7 @@ bool Tree_Parser::parse(const std::string & infix)
 
 		// if reached the end of a token then process token
 		if (index == " " or i == infix.length() - 1) {
-			if (pass_index != -1) 
+			if (pass_index = -1) 
 			{
 				if (token.str() == "+") {
 					priority = 1;
