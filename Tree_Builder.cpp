@@ -102,9 +102,11 @@ void Tree_Builder::build_operator(Binary_Operator_Node* node)
 {
 	if (this->tree_ == nullptr)
 	{
+		std::cout << "tree = add operator" << std::endl;
 		this->tree_ = node;
 		return;
 	}
+	std::cout << "set first empty add" << std::endl;
 	this->set_first_empty_node(node);
 }
 
