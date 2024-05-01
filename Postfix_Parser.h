@@ -23,7 +23,7 @@ public:
 	*
 	* @param[in]	Postfix_Builder		builder that the parser is working with
 	*/
-	Postfix_Parser(Postfix_Builder * builder);
+	Postfix_Parser(Postfix_Builder & builder);
 
 	/// Destructor
 	~Postfix_Parser(void);
