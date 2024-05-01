@@ -33,14 +33,12 @@ bool Tree_Parser::parse(const std::string & infix)
 	int least_pri_index = 0;
 	int pass_index = -1;
 	std::string least_pri_token = "";
-	std::cout << "variables instantiated" << std::endl;
+	std::cout << "loop start: " << infix << std::endl;
 	for (size_t i = 0; i < infix.length(); i++)
 	{
-		std::cout << "top of loop" << std::endl;
 		// set index = to the current string at the index
 		index = infix[i];
 
-		std::cout << "index taken" << std::endl;
 		// if reached the end of a token then process token
 		if (index == " " or i == infix.length() - 1) {
 			if (pass_index != -1) 
@@ -99,15 +97,21 @@ bool Tree_Parser::parse(const std::string & infix)
 		else
 			token << index;
 	}
+	std::cout << "loop exit: " << infix << std::endl;
 	// end of loop and have found operator with least priority
 	// check that operator was found
 	// if found then build operator and recursively call both sides of the operator
 	if (priority != 0)
 	{
+		std::cout << "enter priority > 0" << std::endl;
 		if (token.str() == "+") {
+			std::cout << "+ operator started" << std::endl;
 			this->builder_.build_add_operator();
+			std::cout << "+ operator built" << std::endl;
 			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
+			std::cout << "parse left finished: " << std::endl;
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
+			std::cout << "parse right finished: " << std::endl;
 		}
 		if (token.str() == "-") {
 			this->builder_.build_subtract_operator();
