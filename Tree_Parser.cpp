@@ -33,7 +33,6 @@ bool Tree_Parser::parse(const std::string & infix)
 	int least_pri_index = 0;
 	int pass_index = -1;
 	std::string least_pri_token = "";
-	std::cout << "loop start: " << infix << std::endl;
 	for (size_t i = 0; i < infix.length(); i++)
 	{
 		// set index = to the current string at the index
@@ -41,7 +40,6 @@ bool Tree_Parser::parse(const std::string & infix)
 
 		// if reached the end of a token then process token
 		if (index == " " or i == infix.length() - 1) {
-			std::cout << "token found: " << token.str() << std::endl;
 			if (pass_index = -1) 
 			{
 				if (token.str() == "+") {
@@ -100,25 +98,16 @@ bool Tree_Parser::parse(const std::string & infix)
 		else
 			token << index;
 	}
-	std::cout << "loop exit: ";
 	std::cout << infix << std::endl;
 	// end of loop and have found operator with least priority
 	// check that operator was found
 	// if found then build operator and recursively call both sides of the operator
 	if (priority != 0)
 	{
-		std::cout << "enter priority > 0" << std::endl;
 		if (least_pri_token == "+") {
-			std::cout << "+ operator started" << std::endl;
 			this->builder_->build_add_operator();
-			this->builder_->get_expression()->print();
-			std::cout << "+ operator built" << std::endl;
-			std::cout << "left ( 0 , "<< least_pri_index - 1 << " ): " << infix.substr(0, least_pri_index - 1) << std::endl;
 			if (!this->parse(infix.substr(0, least_pri_index - 1))) { return false; }
-			std::cout << "parse left finished: " << std::endl;
-			std::cout << "right ( " << least_pri_index + 2 << " , " << infix.length() - least_pri_index - 2 << " ): " << infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2) << std::endl;
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
-			std::cout << "parse right finished: " << std::endl;
 		}
 		if (least_pri_token == "-") {
 			this->builder_->build_subtract_operator();
@@ -144,13 +133,8 @@ bool Tree_Parser::parse(const std::string & infix)
 	// else build a number node
 	else
 	{
-		std::cout << "enter number create" << std::endl;
 		this->builder_->build_number(stoi(infix));
-		std::cout << "print in number" << std::endl;
-		this->builder_->get_expression()->print();
 		return true;
 	}
-	std::cout << "print in parser" << std::endl;
-	this->builder_->get_expression()->print();
 	return true;
 }

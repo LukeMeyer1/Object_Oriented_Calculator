@@ -30,7 +30,6 @@ int Calculator::evaluate(const std::string& infix)
 	this->builder_->get_expression()->print();
 	if (nullptr == this->builder_->get_expression())
 		throw std::runtime_error("No Expression");
-	std::cout << "parsed" << std::endl;
 	return this->builder_->get_expression()->eval();
 }
 
