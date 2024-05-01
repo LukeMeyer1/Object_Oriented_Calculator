@@ -112,9 +112,10 @@ bool Tree_Parser::parse(const std::string & infix)
 			std::cout << "+ operator started" << std::endl;
 			this->builder_.build_add_operator();
 			std::cout << "+ operator built" << std::endl;
-			std::cout << "left ( 0 , "<< least_pri_index - 2 << " ): " << infix.substr(0, least_pri_index - 2) << std::endl;
-			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
+			std::cout << "left ( 0 , "<< least_pri_index - 1 << " ): " << infix.substr(0, least_pri_index - 1) << std::endl;
+			if (!this->parse(infix.substr(0, least_pri_index - 1))) { return false; }
 			std::cout << "parse left finished: " << std::endl;
+			std::cout << "right ( " << least_pri_index + 2 << " , " << infix.length() - least_pri_index - 2 " ): " << infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2) << std::endl;
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
 			std::cout << "parse right finished: " << std::endl;
 		}
