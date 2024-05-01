@@ -42,37 +42,42 @@ bool Tree_Parser::parse(const std::string & infix)
 		if (index == " " or i == infix.length() - 1) {
 			if (pass_index != -1) 
 			{
-				switch (token.str()) {
-					case "+":
-						priority = 1;
-						least_pri_index = i-1;
+				if (token.str() == "+") {
+					priority = 1;
+					least_pri_index = i - 1;
+					least_pri_token = token.str();
+				}
+				if (token.str() == "-") {
+					priority = 1;
+					least_pri_index = i - 1;
+					least_pri_token = token.str();
+				}
+				if (token.str() == "*") {
+					if (priority >= 2) {
+						priority = 2;
+						least_pri_index = i - 1;
 						least_pri_token = token.str();
-					case "-":
-						priority = 1;
-						least_pri_index = i-1;
+					}
+				}
+				if (token.str() == "/") {
+					if (priority <= 2) {
+						priority = 2;
+						least_pri_index = i - 1;
 						least_pri_token = token.str();
-					case "*":
-						if (priority >= 2) {
-							priority = 2;
-							least_pri_index = i - 1;
-							least_pri_token = token.str();
-						}
-					case "/":
-						if (priority <= 2){
-							priority = 2;
-							least_pri_index = i - 1;
-							least_pri_token = token.str();
-						}
-					case "%":
-						if (priority <= 2) {
-							priority = 2;
-							least_pri_index = i - 1;
-							least_pri_token = token.str();
-						}
-					case "(":
-						pass_index = i-1;
-					case ")":
-						return false;
+					}
+				}
+				if (token.str() == "%") {
+					if (priority <= 2) {
+						priority = 2;
+						least_pri_index = i - 1;
+						least_pri_token = token.str();
+					}
+				}
+				if (token.str() == "(") {
+					pass_index = i - 1;
+				}
+				if (token.str() == ")") {
+					return false;
 
 				}
 			}
@@ -96,27 +101,31 @@ bool Tree_Parser::parse(const std::string & infix)
 	// if found then build operator and recursively call both sides of the operator
 	if (priority != 0)
 	{
-		switch (least_pri_token) {
-		case "+":
+		if (token.str() == "+") {
 			this->builder_.build_add_operator();
 			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
-		case "-":
+		}
+		if (token.str() == "-") {
 			this->builder_.build_subtract_operator();
 			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
-		case "*":
+		}
+		if (token.str() == "*") {
 			this->builder_.build_multiply_operator();
 			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
-		case "/":
+		}
+		if (token.str() == "/") {
 			this->builder_.build_divide_operator();
 			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
-		case "%":
+		}
+		if (token.str() == "%") {
 			this->builder_.build_modulo_operator();
 			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
+		}
 	}
 	// else build a number node
 	else
