@@ -33,11 +33,14 @@ bool Tree_Parser::parse(const std::string & infix)
 	int least_pri_index = 0;
 	int pass_index = -1;
 	std::string least_pri_token = "";
+	std::cout << "variables instantiated" << std::endl;
 	for (size_t i = 0; i < infix.length(); i++)
 	{
+		std::cout << "top of loop" << std::endl;
 		// set index = to the current string at the index
 		index = infix[i];
 
+		std::cout << "index taken" << std::endl;
 		// if reached the end of a token then process token
 		if (index == " " or i == infix.length() - 1) {
 			if (pass_index != -1) 
