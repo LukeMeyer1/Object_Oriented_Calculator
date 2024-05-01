@@ -32,14 +32,14 @@ bool Tree_Parser::parse(const std::string & infix)
 	int priority = 0;
 	int least_pri_index = 0;
 	int pass_index = -1;
-	std::string least_pri_token = '';
-	for (size_t i = 0; i < infix.length(), i++)
+	std::string least_pri_token = "";
+	for (size_t i = 0; i < infix.length(); i++)
 	{
 		// set index = to the current string at the index
 		index = infix[i];
 
 		// if reached the end of a token then process token
-		if (index == ' ' or i == infix.length()-1) {
+		if (index == " " or i == infix.length() - 1) {
 			if (pass_index != -1) 
 			{
 				switch (token) {
