@@ -6,7 +6,6 @@
 // on this assignment.
 
 #include "Calculator.h"
-#include <memory>
 
 
 //
@@ -33,7 +32,7 @@ int Calculator::evaluate(const std::string& infix)
 	//if (!this->parse_expr(infix))
 	//	throw std::runtime_exception(“Bad expresssion”);
 	std::cout << "pre get expression" << std::endl;
-	std::unique_ptr <Math_Expression> expr(this->builder_->get_expression());
+	Math_Expression expr(this->builder_->get_expression());
 	std::cout << "post get expression" << std::endl;
 	//if (nullptr == expr.get())
 	//	throw std::runtime_exception(“No expression!!”);
