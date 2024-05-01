@@ -108,7 +108,7 @@ bool Tree_Parser::parse(const std::string & infix)
 	if (priority != 0)
 	{
 		std::cout << "enter priority > 0" << std::endl;
-		if (token.str() == "+") {
+		if (least_pri_token.str() == "+") {
 			std::cout << "+ operator started" << std::endl;
 			this->builder_.build_add_operator();
 			std::cout << "+ operator built" << std::endl;
@@ -117,22 +117,22 @@ bool Tree_Parser::parse(const std::string & infix)
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
 			std::cout << "parse right finished: " << std::endl;
 		}
-		if (token.str() == "-") {
+		if (least_pri_token.str() == "-") {
 			this->builder_.build_subtract_operator();
 			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
 		}
-		if (token.str() == "*") {
+		if (least_pri_token.str() == "*") {
 			this->builder_.build_multiply_operator();
 			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
 		}
-		if (token.str() == "/") {
+		if (least_pri_token.str() == "/") {
 			this->builder_.build_divide_operator();
 			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
 		}
-		if (token.str() == "%") {
+		if (least_pri_token.str() == "%") {
 			this->builder_.build_modulo_operator();
 			if (!this->parse(infix.substr(0, least_pri_index - 2))) { return false; }
 			if (!this->parse(infix.substr(least_pri_index + 2, infix.length() - least_pri_index - 2))) { return false; }
