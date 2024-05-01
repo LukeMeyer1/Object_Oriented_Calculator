@@ -23,7 +23,7 @@ public:
 	*
 	* @param[in]	Postfix_Builder		builder that the parser is working with
 	*/
-	Postfix_Parser(Postfix_Builder& builder);
+	Postfix_Parser(Postfix_Builder * builder);
 
 	/// Destructor
 	~Postfix_Parser(void);
@@ -48,7 +48,7 @@ private:
 	bool parse_equation(std::istringstream& input, Postfix_Builder& b, bool opened_parenthesis);
 
 	/// Reference to the builder used to parse
-	Postfix_Builder builder_;
+	Postfix_Builder * builder_;
 	
 	/// infix expression being parsed
 	std::string infix;
