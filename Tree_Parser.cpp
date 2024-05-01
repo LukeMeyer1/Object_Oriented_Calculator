@@ -42,32 +42,32 @@ bool Tree_Parser::parse(const std::string & infix)
 		if (index == " " or i == infix.length() - 1) {
 			if (pass_index != -1) 
 			{
-				switch (token) {
+				switch (token.str()) {
 					case "+":
 						priority = 1;
 						least_pri_index = i-1;
-						least_pri_token = token;
+						least_pri_token = token.str();
 					case "-":
 						priority = 1;
 						least_pri_index = i-1;
-						least_pri_token = token;
+						least_pri_token = token.str();
 					case "*":
 						if (priority >= 2) {
 							priority = 2;
 							least_pri_index = i - 1;
-							least_pri_token = token;
+							least_pri_token = token.str();
 						}
 					case "/":
 						if (priority <= 2){
 							priority = 2;
 							least_pri_index = i - 1;
-							least_pri_token = token;
+							least_pri_token = token.str();
 						}
 					case "%":
 						if (priority <= 2) {
 							priority = 2;
 							least_pri_index = i - 1;
-							least_pri_token = token;
+							least_pri_token = token.str();
 						}
 					case "(":
 						pass_index = i-1;
@@ -78,7 +78,7 @@ bool Tree_Parser::parse(const std::string & infix)
 			}
 			// if pass_index is at an index then search for the closing parenthesis and once found then check that parenthesis don't encapsulate the entire statement
 			else {
-				if (token == ")") {
+				if (token.str() == ")") {
 					if (pass_index == 0 and i == infix.length() - 1) {
 						//recursive without the parenthesis
 						return this->parse(infix.substr(2, i - 4)); 
@@ -121,7 +121,7 @@ bool Tree_Parser::parse(const std::string & infix)
 	// else build a number node
 	else
 	{
-		this->builder_.build_number(stoi(token));
+		this->builder_.build_number(stoi(token.str()));
 		return true;
 	}
 	return true;
