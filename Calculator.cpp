@@ -38,7 +38,8 @@ int Calculator::evaluate(const std::string& infix)
 	//if (nullptr == expr.get())
 	//	throw std::runtime_exception(“No expression!!”);
 	// evaluate the expression
-	std::cout << "pre eval" << std::endl;
+	this->builder_->get_expression().print();
+	std::cout << std::endl << "pre eval" << std::endl;
 	return expr->eval();
 }
 
