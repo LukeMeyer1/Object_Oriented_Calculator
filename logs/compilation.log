@@ -1,0 +1,10 @@
+Generating 'make' output using default input
+Generation Time: 0s
+make[1]: Entering directory '/home/hilljh/sandbox/cs363/assignment4/meyerlf/cs363-spring2024-assignment4'
+rm -rf driver.o
+rm -rf ./assignment4
+make[1]: Leaving directory '/home/hilljh/sandbox/cs363/assignment4/meyerlf/cs363-spring2024-assignment4'
+make[1]: Entering directory '/home/hilljh/sandbox/cs363/assignment4/meyerlf/cs363-spring2024-assignment4'
+g++  -fPIC -O -std=c++11 -D_REENTRANT -c  -o "driver.o" driver.cpp
+g++  -fPIC -O -std=c++11 -D_REENTRANT -L"." driver.o -ldl  -lpthread -o "assignment4"
+make[1]: Leaving directory '/home/hilljh/sandbox/cs363/assignment4/meyerlf/cs363-spring2024-assignment4'
