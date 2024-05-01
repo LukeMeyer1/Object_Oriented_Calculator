@@ -41,6 +41,7 @@ bool Tree_Parser::parse(const std::string & infix)
 
 		// if reached the end of a token then process token
 		if (index == " " or i == infix.length() - 1) {
+			std::cout << "token found: " << token.str() << std::endl;
 			if (pass_index = -1) 
 			{
 				if (token.str() == "+") {
@@ -92,6 +93,8 @@ bool Tree_Parser::parse(const std::string & infix)
 					pass_index = -1;
 				}
 			}
+			//clear token
+			token.str(std::string())
 		}
 		// if not end of token then add to token
 		else
@@ -139,7 +142,7 @@ bool Tree_Parser::parse(const std::string & infix)
 	else
 	{
 		std::cout << "enter number create" << std::endl;
-		this->builder_.build_number(stoi(token.str()));
+		this->builder_.build_number(stoi(infix));
 		return true;
 	}
 	return true;
