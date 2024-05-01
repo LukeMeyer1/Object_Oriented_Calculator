@@ -46,8 +46,7 @@ int main(int argc, char* argv[])
 	// RESPONSE: added loop with and check for QUIT to end.
 	
 	std::string infix;
-	Stack<int> result = Stack<int>();
-	Postfix_Builder * build = new Postfix_Builder(result);
+	Tree_Builder * build = new Tree_Builder();
 	Calculator calc(build);
 
 
