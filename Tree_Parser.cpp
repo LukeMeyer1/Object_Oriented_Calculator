@@ -27,7 +27,6 @@ Tree_Parser::~Tree_Parser(void)
 //
 bool Tree_Parser::parse(const std::string & infix)
 {
-	this->builder_->start_expression();
 	std::stringstream token;
 	std::string index;
 	int priority = 0;

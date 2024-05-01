@@ -70,9 +70,7 @@ void Tree_Builder::build_modulo_operator(void)
 //	start expression
 //
 void Tree_Builder::start_expression(void)
-{
-	this->tree_ = nullptr;
-}
+{ }
 
 //
 //	end expression
